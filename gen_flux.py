@@ -4,6 +4,7 @@ import json
 from datetime import datetime
 from g4f.client import Client as Client_g4f
 from gradio_client import Client as Client_gradio
+from gradio_client import handle_file
 from PIL import Image
 
 types = ["拍內衣形象照", "日常生活照", "戶外旅遊照", "運動照", "上班工作照"]
