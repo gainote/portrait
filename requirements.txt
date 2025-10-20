@@ -1,0 +1,3 @@
+g4f
+gradio_client
+Pillow
