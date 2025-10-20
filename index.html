@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SexyFashion | 性感時尚</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* 網站介紹區域樣式 */
+    .hero-section {
+      background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #D2B48C 100%);
+      color: white;
+      padding: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,100 1000,0"/></svg>');
+      background-size: cover;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .hero-subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .ai-badge {
+      display: inline-block;
+      background: rgba(210, 180, 140, 0.3);
+      padding: 8px 16px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(210, 180, 140, 0.5);
+    }
+
+    /* 改良的幻燈片樣式 */
+    .enhanced-carousel {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      cursor: grab;
+      user-select: none;
+    }
+    
+    .carousel-container:active {
+      cursor: grabbing;
+    }
+    
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+    
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    /* 導航按鈕 */
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(139, 69, 19, 0.9);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .carousel-nav:hover {
+      background: rgba(139, 69, 19, 1);
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .carousel-nav.prev {
+      left: 20px;
+    }
+    
+    .carousel-nav.next {
+      right: 20px;
+    }
+    
+    .carousel-nav i {
+      font-size: 18px;
+      color: white;
+    }
+    
+    /* 指示器 */
+    .carousel-indicators {
+      position: absolute;
+      bottom: 20px;
+      left: 35%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .carousel-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      flex-shrink: 0;
+    }
+    
+    .carousel-indicator.active {
+      background: rgba(210, 180, 140, 1);
+      transform: scale(1.2);
+      border-color: white;
+    }
+    
+    /* 既有樣式保持不變 */
+    .masonry-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .masonry-grid {
+      position: relative;
+    }
+
+    .grid-sizer {
+      width: calc(25% - 12px);
+    }
+
+    .grid-item {
+      width: calc(25% - 12px);
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    .card {
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #fff;
+      border: none;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .card-img-top:not(.loaded) {
+      opacity: 0;
+    }
+
+    .card-img-top.loaded {
+      opacity: 1;
+    }
+
+    /* Modal */
+    #imageModal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    #imageModal.show {
+      display: flex;
+    }
+
+    #modalImage {
+      max-width: 90%;
+      max-height: 90vh;
+      transition: transform 0.3s ease;
+      border-radius: 8px;
+      object-fit: contain;
+      cursor: zoom-in;
+    }
+
+    #modalImage.zoomed {
+      cursor: zoom-out;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      z-index: 2001;
+    }
+
+    .close-btn:hover {
+      color: #ccc;
+    }
+
+    /* 響應式調整 */
+    @media (max-width: 1200px) {
+      .grid-sizer,
+      .grid-item {
+        width: calc(33.333% - 10px);
+      }
+      .hero-title {
+        font-size: 2.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-sizer,
+      .grid-item {
+        width: calc(50% - 8px);
+      }
+      .grid-item {
+        margin-bottom: 12px;
+      }
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      .carousel-container {
+        height: 300px;
+      }
+      .carousel-nav {
+        width: 40px;
+        height: 40px;
+      }
+      .carousel-nav.prev {
+        left: 10px;
+      }
+      .carousel-nav.next {
+        right: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .grid-sizer,
+      .grid-item {
+        width: 100%;
+      }
+      .grid-item {
+        margin-bottom: 10px;
+      }
+      .masonry-container { 
+        padding: 0 10px; 
+      }
+      .hero-title {
+        font-size: 1.8rem;
+      }
+      .hero-section {
+        padding: 40px 0;
+      }
+      .carousel-container {
+        height: 250px;
+      }
+    }
+
+    /* 載入動畫 */
+    .loading {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 16px;
+    }
+
+    .loading::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      border-top-color: #666;
+      animation: spin 1s ease-in-out infinite;
+      margin-left: 10px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* 圖片載入骨架屏 */
+    .image-placeholder {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+      min-height: 200px;
+      border-radius: 12px;
+    }
+
+    /* 結束訊息樣式 */
+    #endMessage {
+      font-size: 16px;
+      color: #6c757d;
+      padding: 30px 20px;
+      margin-top: 20px;
+      border-top: 1px solid #dee2e6;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    @keyframes loading {
+      0% {
+        background-position: 200% 0;
+      }
+      100% {
+        background-position: -200% 0;
+      }
+    }
+
+    /* 平滑動畫效果 */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* 替換原有的 #imageModal 和相關樣式 */
+#imageModal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 0;
+}
+
+#imageModal.show {
+  display: flex;
+}
+
+.modal-content-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.modal-image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 70%;
+}
+
+#modalImage {
+  max-width: 100%;
+  max-height: 90vh;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+  object-fit: contain;
+  cursor: zoom-in;
+}
+
+#modalImage.zoomed {
+  cursor: zoom-out;
+  transform: scale(1.5);
+}
+
+.modal-info-panel {
+  width: 350px;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(160, 82, 45, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  padding: 30px;
+  overflow-y: auto;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+  color: white;
+  position: relative;
+}
+
+.modal-info-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="white" opacity="0.05"><circle cx="20" cy="20" r="2"/><circle cx="80" cy="40" r="1.5"/><circle cx="40" cy="70" r="1"/><circle cx="70" cy="85" r="2"/><circle cx="10" cy="60" r="1.5"/></svg>');
+  pointer-events: none;
+}
+
+.info-content {
+  position: relative;
+  z-index: 1;
+}
+
+.info-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(210, 180, 140, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-section {
+  margin-bottom: 25px;
+}
+
+.info-label {
+  font-size: 0.9rem;
+  color: rgba(210, 180, 140, 1);
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info-value {
+  font-size: 1rem;
+  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 15px;
+  border-radius: 8px;
+  border-left: 3px solid rgba(210, 180, 140, 0.8);
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2001;
+  background: rgba(139, 69, 19, 0.8);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.close-btn:hover {
+  background: rgba(139, 69, 19, 1);
+  transform: scale(1.1);
+}
+
+/* 響應式設計 */
+@media (max-width: 1024px) {
+  .modal-info-panel {
+    width: 300px;
+  }
+  
+  .modal-image-container {
+    max-width: calc(100% - 300px);
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content-wrapper {
+    flex-direction: column;
+  }
+  
+  .modal-image-container {
+    max-width: 100%;
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .modal-info-panel {
+    width: 100%;
+    height: 40%;
+    padding: 20px;
+  }
+  
+  #modalImage {
+    max-height: 60vh;
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">SexyFashion | 性感時尚</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section - 網站介紹 -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content text-center">
+        <div class="ai-badge">
+          <i class="fas fa-robot me-2"></i>AI 驅動 × 大數據分析
+        </div>
+        <h1 class="hero-title">SexyFashion</h1>
+        <p class="hero-subtitle">
+          透過先進 AI 技術與大數據分析，<br>
+          為您呈現最前衛的性感時尚藝術作品集
+        </p>
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-8">
+            <p class="lead">
+              結合人工智慧美學演算法 | 精心策劃每一張視覺作品 | 帶來前所未有的時尚藝術體驗<br>
+              <font style="font-size: 10px; color: darkgray;">合作請洽：sexyfashionai@gmail.com</font>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Carousel 增強版幻燈片 -->
+  <div class="container my-5">
+    <div class="enhanced-carousel">
+      <div class="carousel-container" id="carouselContainer">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/gainote/sexyfashion/refs/heads/main/images/2025_06_18/2025_06_18_36.webp" alt="時尚作品 1">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/gainote/sexyfashion/refs/heads/main/images/2025_06_18/2025_06_18_32.webp" alt="時尚作品 2">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/gainote/sexyfashion/refs/heads/main/images/2025_06_19/2025_06_19_07.webp" alt="時尚作品 3">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/gainote/sexyfashion/refs/heads/main/images/2025_06_18/2025_06_18_14.webp" alt="時尚作品 4">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://raw.githubusercontent.com/gainote/sexyfashion/refs/heads/main/images/2025_06_18/2025_06_18_03.webp" alt="時尚作品 5">
+          </div>
+        </div>
+        
+        <!-- 導航按鈕 -->
+        <button class="carousel-nav prev" id="prevBtn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-nav next" id="nextBtn">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <!-- 指示器 -->
+        <div class="carousel-indicators" id="carouselIndicators">
+          <!-- 由 JavaScript 動態生成 -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery -->
+  <div class="masonry-container my-5">
+    <div id="gallery" class="masonry-grid">
+      <div class="grid-sizer"></div>
+      <!-- 圖片將由 JavaScript 動態添加 -->
+    </div>
+    <div id="loading" class="loading" style="display: none;">
+      載入中
+    </div>
+    <div id="endMessage" class="text-center py-4" style="display: none;">
+      <div class="text-muted">
+        <i class="fas fa-check-circle me-2"></i>
+        已經到底囉！沒有更多圖片了
+      </div>
+    </div>
+  </div>
+
+  <!-- 替換原有的 Modal HTML -->
+<div id="imageModal" class="modal">
+  <span class="close-btn">×</span>
+  <div class="modal-content-wrapper">
+    <div class="modal-image-container">
+      <img id="modalImage" class="modal-content" alt="放大圖片" style="background-color: transparent;" />
+    </div>
+    <div class="modal-info-panel">
+      <div class="info-content">
+        <h3 class="info-title">
+          <i class="fas fa-palette"></i>
+          藝術作品資訊
+        </h3>
+        
+        <div class="info-section">
+          <div class="info-label">
+            <i class="fas fa-image me-2"></i>檔案名稱
+          </div>
+          <div class="info-value" id="infoFilename">載入中...</div>
+        </div>
+        
+        <div class="info-section">
+          <div class="info-label">
+            <i class="fas fa-lightbulb me-2"></i>設計理念
+          </div>
+          <div class="info-value" id="infoPrompt">載入中...</div>
+        </div>
+        
+        <div class="info-section">
+          <div class="info-label">
+            <i class="fas fa-calendar me-2"></i>創作日期
+          </div>
+          <div class="info-value" id="infoDate">載入中...</div>
+        </div>
+        
+        <div class="info-section">
+          <div class="info-label">
+            <i class="fas fa-download me-2"></i>作品編號
+          </div>
+          <div class="info-value"><a href="/images/myw3schoolsimage.jpg" id="imageDownload" download>下載原圖</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer class="text-center text-muted py-4 bg-light">
+    © 2025 性感時尚 SexyFashion | 聯繫合作：sexyfashionai@gmail.com
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  
+  <script>
+    // Enhanced Carousel 功能
+    class EnhancedCarousel {
+      constructor(container) {
+        this.container = container;
+        this.track = container.querySelector('#carouselTrack');
+        this.slides = container.querySelectorAll('.carousel-slide');
+        this.prevBtn = container.querySelector('#prevBtn');
+        this.nextBtn = container.querySelector('#nextBtn');
+        this.indicatorsContainer = container.querySelector('#carouselIndicators');
+        
+        this.currentIndex = 0;
+        this.slideCount = this.slides.length;
+        this.isDragging = false;
+        this.startX = 0;
+        this.currentX = 0;
+        this.initialTransform = 0;
+        
+        this.init();
+      }
+      
+      init() {
+        this.createIndicators();
+        this.bindEvents();
+        this.updateCarousel();
+        this.startAutoplay();
+      }
+      
+      createIndicators() {
+        for (let i = 0; i < this.slideCount; i++) {
+          const indicator = document.createElement('div');
+          indicator.className = 'carousel-indicator';
+          if (i === 0) indicator.classList.add('active');
+          indicator.addEventListener('click', () => this.goToSlide(i));
+          this.indicatorsContainer.appendChild(indicator);
+        }
+      }
+      
+      bindEvents() {
+        // 按鈕事件
+        this.prevBtn.addEventListener('click', () => this.prevSlide());
+        this.nextBtn.addEventListener('click', () => this.nextSlide());
+        
+        // 觸控/滑鼠拖拽事件
+        this.container.addEventListener('mousedown', (e) => this.dragStart(e));
+        this.container.addEventListener('touchstart', (e) => this.dragStart(e), { passive: true });
+        
+        document.addEventListener('mousemove', (e) => this.dragMove(e));
+        document.addEventListener('touchmove', (e) => this.dragMove(e), { passive: true });
+        
+        document.addEventListener('mouseup', () => this.dragEnd());
+        document.addEventListener('touchend', () => this.dragEnd());
+        
+        // 鍵盤事件
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') this.prevSlide();
+          if (e.key === 'ArrowRight') this.nextSlide();
+        });
+        
+        // 暫停/恢復自動播放
+        this.container.addEventListener('mouseenter', () => this.pauseAutoplay());
+        this.container.addEventListener('mouseleave', () => this.startAutoplay());
+      }
+      
+      dragStart(e) {
+        this.isDragging = true;
+        this.startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+        this.initialTransform = -this.currentIndex * 100;
+        this.track.style.transition = 'none';
+        this.pauseAutoplay();
+      }
+      
+      dragMove(e) {
+        if (!this.isDragging) return;
+        
+        e.preventDefault();
+        this.currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+        const deltaX = this.currentX - this.startX;
+        const movePercent = (deltaX / this.container.offsetWidth) * 100;
+        
+        this.track.style.transform = `translateX(${this.initialTransform + movePercent}%)`;
+      }
+      
+      dragEnd() {
+        if (!this.isDragging) return;
+        
+        this.isDragging = false;
+        const deltaX = this.currentX - this.startX;
+        const threshold = this.container.offsetWidth * 0.1;
+        
+        this.track.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        
+        if (Math.abs(deltaX) > threshold) {
+          if (deltaX > 0) {
+            this.prevSlide();
+          } else {
+            this.nextSlide();
+          }
+        } else {
+          this.updateCarousel();
+        }
+        
+        this.startAutoplay();
+      }
+      
+      goToSlide(index) {
+        this.currentIndex = index;
+        this.updateCarousel();
+        this.pauseAutoplay();
+        this.startAutoplay();
+      }
+      
+      nextSlide() {
+        this.currentIndex = (this.currentIndex + 1) % this.slideCount;
+        this.updateCarousel();
+      }
+      
+      prevSlide() {
+        this.currentIndex = (this.currentIndex - 1 + this.slideCount) % this.slideCount;
+        this.updateCarousel();
+      }
+      
+      updateCarousel() {
+        const translateX = -this.currentIndex * 100;
+        this.track.style.transform = `translateX(${translateX}%)`;
+        
+        // 更新指示器
+        const indicators = this.indicatorsContainer.querySelectorAll('.carousel-indicator');
+        indicators.forEach((indicator, index) => {
+          indicator.classList.toggle('active', index === this.currentIndex);
+        });
+      }
+      
+      startAutoplay() {
+        this.pauseAutoplay();
+        this.autoplayTimer = setInterval(() => {
+          this.nextSlide();
+        }, 5000);
+      }
+      
+      pauseAutoplay() {
+        if (this.autoplayTimer) {
+          clearInterval(this.autoplayTimer);
+        }
+      }
+    }
+    
+    // 初始化增強版輪播
+    document.addEventListener('DOMContentLoaded', () => {
+      const carouselContainer = document.getElementById('carouselContainer');
+      new EnhancedCarousel(carouselContainer);
+    });
+
+    // 原有的圖片瀏覽功能保持不變
+    const gallery = document.getElementById("gallery");
+    const imageModal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const closeBtn = document.querySelector(".close-btn");
+    const loadingDiv = document.getElementById("loading");
+    const endMessageDiv = document.getElementById("endMessage");
+    let currentDate = new Date();
+    let loading = false;
+    let hasReachedEnd = false;
+    const loadedDates = new Set();
+    let masonryInstance = null;
+
+    function formatDate(date) {
+      return date.toISOString().split("T")[0].replace(/-/g, "_");
+    }
+
+    function showLoading() {
+      if (!hasReachedEnd) {
+        loadingDiv.style.display = 'block';
+      }
+    }
+
+    function hideLoading() {
+      loadingDiv.style.display = 'none';
+    }
+
+    function showEndMessage() {
+      hideLoading();
+      endMessageDiv.style.display = 'block';
+      hasReachedEnd = true;
+    }
+
+    function initMasonry() {
+      if (!masonryInstance) {
+        masonryInstance = new Masonry(gallery, {
+          itemSelector: '.grid-item',
+          columnWidth: '.grid-sizer',
+          gutter: 15,
+          percentPosition: true
+        });
+      }
+    }
+
+    function loadImageJson(dateStr, retryCount = 0) {
+      if (hasReachedEnd) {
+        return;
+      }
+
+      if (loadedDates.has(dateStr)) {
+        loadPreviousDate();
+        return;
+      }
+
+      if (retryCount >= 30) {
+        console.log(`已重試 ${retryCount} 天，已到底部`);
+        showEndMessage();
+        loading = false;
+        return;
+      }
+
+      showLoading();
+      const jsonUrl = `images/${dateStr}/data.json`;
+      
+      console.log(`嘗試載入: ${jsonUrl} (重試次數: ${retryCount})`);
+      
+      fetch(jsonUrl)
+        .then(res => {
+          if (!res.ok) {
+            throw new Error(`HTTP ${res.status}: JSON 不存在 - ${jsonUrl}`);
+          }
+          return res.json();
+        })
+        .then(data => {
+          if (!data.images || data.images.length === 0) {
+            console.log(`${dateStr} 的圖片數據為空，嘗試前一天`);
+            currentDate.setDate(currentDate.getDate() - 1);
+            const newDateStr = formatDate(currentDate);
+            setTimeout(() => {
+              loadImageJson(newDateStr, retryCount + 1);
+            }, 100);
+            return;
+          }
+          
+          console.log(`成功載入 ${dateStr}，共 ${data.images.length} 張圖片`);
+          loadedDates.add(dateStr);
+          renderImages(data.images);
+          
+          setTimeout(() => {
+            loadPreviousDate();
+          }, 200);
+        })
+        .catch(error => {
+          console.log(`載入失敗: ${error.message}`);
+          currentDate.setDate(currentDate.getDate() - 1);
+          const newDateStr = formatDate(currentDate);
+          setTimeout(() => {
+            loadImageJson(newDateStr, retryCount + 1);
+          }, 100);
+        })
+        .finally(() => {
+          if (retryCount === 0) {
+            setTimeout(() => {
+              hideLoading();
+            }, 500);
+          }
+        });
+    }
+
+    function renderImages(images) {
+      const newElements = [];
+      
+      images.forEach(imgObj => {
+        const item = document.createElement("div");
+        item.className = "grid-item";
+        
+        const card = document.createElement("div");
+        card.className = "card shadow-sm";
+        
+        const placeholder = document.createElement("div");
+        placeholder.className = "image-placeholder";
+        card.appendChild(placeholder);
+        
+        const img = document.createElement("img");
+        img.src = imgObj.thumb_path;
+        img.className = "card-img-top img-fluid";
+        img.loading = "lazy";
+        img.alt = imgObj.alt || "藝術攝影";
+        img.style.display = "none";
+        
+        img.onload = function() {
+          placeholder.remove();
+          this.style.display = "block";
+          this.classList.add('loaded');
+          
+          if (masonryInstance) {
+            masonryInstance.layout();
+          }
+        };
+        
+        img.onerror = function() {
+          placeholder.remove();
+          item.remove();
+        };
+        
+        // 1. 在 renderImages 函數中，找到圖片點擊事件的部分，替換為：
+img.addEventListener("click", () => {
+  // 顯示圖片
+  modalImage.src = imgObj.filename;
+  modalImage.style.transform = "scale(1)";
+  modalImage.classList.remove('zoomed');
+  
+  // 更新資訊面板
+  updateModalInfo(imgObj);
+  
+  imageModal.classList.add("show");
+});
+
+// 2. 添加新的函數來更新 modal 資訊：
+function updateModalInfo(imgObj) {
+  // 獲取資訊元素
+  const infoFilename = document.getElementById('infoFilename');
+  const infoPrompt = document.getElementById('infoPrompt');
+  const infoDate = document.getElementById('infoDate');
+  const imageDownload = document.getElementById('imageDownload');
+  
+  // 從檔案路徑提取日期和索引
+  const pathParts = imgObj.filename.split('/');
+  const fileName = pathParts[pathParts.length - 1];
+  const datePart = pathParts[pathParts.length - 2];
+  
+  // 更新各個欄位
+  infoFilename.textContent = fileName || '未知檔案';
+  infoPrompt.textContent = imgObj.prompt || imgObj.alt || '暫無設計理念描述';
+  infoDate.textContent = datePart ? datePart.replace(/_/g, '-') : '未知日期';
+  
+  // 從檔名提取編號
+  const indexMatch = fileName.match(/_(\d+)\.webp$/);
+  const indexNumber = indexMatch ? indexMatch[1] : '未知';
+  imageDownload.href = imgObj.filename;
+}
+
+// 3. 更新 modal 圖片點擊事件（縮放功能）：
+modalImage.addEventListener("click", (e) => {
+  e.stopPropagation();
+  const isZoomed = modalImage.classList.contains('zoomed');
+  if (isZoomed) {
+    modalImage.style.transform = "scale(1)";
+    modalImage.classList.remove('zoomed');
+  } else {
+    modalImage.style.transform = "scale(1.5)";
+    modalImage.classList.add('zoomed');
+  }
+});
+
+// 4. 更新 modal 關閉事件：
+imageModal.addEventListener("click", (e) => {
+  // 只有點擊到圖片容器或背景時才關閉，避免點擊資訊面板時關閉
+  if (e.target === imageModal || e.target.closest('.modal-image-container')) {
+    imageModal.classList.remove("show");
+  }
+});
+        
+        card.appendChild(img);
+        item.appendChild(card);
+        newElements.push(item);
+      });
+      
+      newElements.forEach(element => {
+        gallery.appendChild(element);
+      });
+      
+      if (!masonryInstance) {
+        initMasonry();
+      } else {
+        masonryInstance.appended(newElements);
+      }
+      
+      imagesLoaded(newElements, () => {
+        if (masonryInstance) {
+          masonryInstance.layout();
+        }
+        loading = false;
+      });
+    }
+
+    function loadPreviousDate() {
+      currentDate.setDate(currentDate.getDate() - 1);
+      setTimeout(() => {
+        loadNextBatch();
+      }, 200);
+    }
+
+    function loadNextBatch() {
+      if (loading || hasReachedEnd) return;
+      loading = true;
+      const dateStr = formatDate(currentDate);
+      loadImageJson(dateStr, 0);
+    }
+
+    console.log(`開始載入，初始日期: ${formatDate(currentDate)}`);
+    loadNextBatch();
+
+    let scrollTimeout;
+    window.addEventListener("scroll", () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        if (!hasReachedEnd && window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+          loadNextBatch();
+        }
+      }, 100);
+    });
+
+    // Modal 事件
+    closeBtn.addEventListener("click", () => {
+      imageModal.classList.remove("show");
+    });
+
+    modalImage.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isZoomed = modalImage.classList.contains('zoomed');
+      if (isZoomed) {
+        modalImage.style.transform = "scale(1)";
+        modalImage.classList.remove('zoomed');
+      } else {
+        modalImage.style.transform = "scale(1.5)";
+        modalImage.classList.add('zoomed');
+      }
+    });
+
+    imageModal.addEventListener("click", (e) => {
+      if (e.target === imageModal) {
+        imageModal.classList.remove("show");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        imageModal.classList.remove("show");
+      }
+    });
+
+    let resizeTimeout;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (masonryInstance) {
+          masonryInstance.layout();
+        }
+      }, 250);
+    });
+  </script>
+</body>
+</html>
