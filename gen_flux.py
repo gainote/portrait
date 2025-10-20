@@ -112,7 +112,7 @@ thumb_path = os.path.join(folder_path, f"{base_filename}_thumb.webp")
 # === Step 5: 讀取原始 .webp 並儲存原圖與縮圖 ===
 webp_path = result[0]  # ← 你的來源 .webp 圖檔路徑
 
-client = Client("OzzyGT/basic_upscaler")
+client = Client_gradio("OzzyGT/basic_upscaler")
 result = client.predict(
 		image=handle_file(webp_path),
 		model_selection="DAT-2 RealWebPhoto X4",
