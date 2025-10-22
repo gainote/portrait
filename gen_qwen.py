@@ -62,7 +62,8 @@ response = client.chat.completions.create(
     ]
 )
 
-image_prompt = response.choices[0].message.content.strip()+ """8k photo, Large breasts, deep cleavage, ample cleavage，sexy photo, beautilful korean girl without makeup"""
+right_prompt = response.choices[0].message.content.strip() if 'sorry' not in response.choices[0].message.content.strip() else ''
+image_prompt = right_prompt + """8k photo, Large breasts, deep cleavage, ample cleavage，sexy photo, beautilful korean girl without makeup"""
 print("🎨 Prompt:", image_prompt)
 
 # === Step 2: 定義並選取圖片尺寸（所有尺寸皆 ≥ 1024） ===
