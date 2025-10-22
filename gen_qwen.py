@@ -118,7 +118,7 @@ webp_path = result[0]  # ← 你的來源 .webp 圖檔路徑
 with Image.open(webp_path) as img:
     # 儲存原圖
     img.save(output_path, "WEBP", quality=85)
-	img.save(temp_path, "WEBP", quality=85)
+    img.save(temp_path, "WEBP", quality=85)
 
     # 建立縮圖
     thumbnail_width = 400
