@@ -118,7 +118,6 @@ webp_path = result[0]  # ← 你的來源 .webp 圖檔路徑
 with Image.open(webp_path) as img:
     # 儲存原圖
     img.save(output_path, "WEBP", quality=85)
-    img.save(temp_img_path, "WEBP", quality=85)
 
     # 建立縮圖
     thumbnail_width = 400
@@ -128,8 +127,13 @@ with Image.open(webp_path) as img:
     thumb = img.convert("RGB").resize(new_size, Image.LANCZOS)
     thumb.save(thumb_path, "WEBP", quality=80)
 
+    # 建立 temp 縮圖
+    temp_width = 800
+    temp_ratio = temp_width / img.width
+    temp_size = (temp_width, int(img.height * temp_ratio))
 
-
+    temp_img = img.convert("RGB").resize(temp_size, Image.LANCZOS)
+    temp_img.save(temp_img_path, "WEBP", quality=85)
 
 
 # === Step 6: 更新 data.json ===
