@@ -12,7 +12,7 @@ temp_path = os.path.join("temp", today)
 max_process = 3
 cur_process = 0
 for img in os.listdir(temp_path):
-  img_path = os.path.join("temp", img)
+  img_path = os.path.join(temp_path, img)
   client = Client_gradio("OzzyGT/basic_upscaler")
   result = client.predict(
     image=handle_file(img_path),
