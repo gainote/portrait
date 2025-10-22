@@ -90,7 +90,9 @@ result = client.predict(
 # === Step 4: 建立日期資料夾與檔名 ===
 today = datetime.now().strftime("%Y_%m_%d")
 folder_path = os.path.join("images", today)
+temp_path = os.path.join("temp", today)
 os.makedirs(folder_path, exist_ok=True)
+os.makedirs(temp_path, exist_ok=True)
 
 existing_files = [f for f in os.listdir(folder_path) if f.endswith("_thumb.webp")]
 image_index = len(existing_files) + 1
@@ -108,6 +110,7 @@ image_index = len(existing_files) + 1
 base_filename = f"{today}_{image_index:02}"
 output_path = os.path.join(folder_path, f"{base_filename}.webp")
 thumb_path = os.path.join(folder_path, f"{base_filename}_thumb.webp")
+temp_path = os.path.join(temp_path, f"{base_filename}.webp")
 
 # === Step 5: 讀取原始 .webp 並儲存原圖與縮圖 ===
 webp_path = result[0]  # ← 你的來源 .webp 圖檔路徑
@@ -115,6 +118,7 @@ webp_path = result[0]  # ← 你的來源 .webp 圖檔路徑
 with Image.open(webp_path) as img:
     # 儲存原圖
     img.save(output_path, "WEBP", quality=85)
+	img.save(temp_path, "WEBP", quality=85)
 
     # 建立縮圖
     thumbnail_width = 400
