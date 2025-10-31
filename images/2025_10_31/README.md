@@ -12,4 +12,4 @@
 
 <img src="2025_10_31_37.webp" width="100"/> <img src="2025_10_31_38.webp" width="100"/> <img src="2025_10_31_39.webp" width="100"/> <img src="2025_10_31_40.webp" width="100"/> <img src="2025_10_31_41.webp" width="100"/> <img src="2025_10_31_42.webp" width="100"/> <img src="2025_10_31_43.webp" width="100"/> <img src="2025_10_31_44.webp" width="100"/> <img src="2025_10_31_45.webp" width="100"/>
 
-<img src="2025_10_31_46.webp" width="100"/>
+<img src="2025_10_31_46.webp" width="100"/> <img src="2025_10_31_47.webp" width="100"/>
