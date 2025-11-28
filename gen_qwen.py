@@ -51,7 +51,7 @@ prompt 應是流暢、連貫的英文段落。
 client = Client_g4f()
 
 response = client.chat.completions.create(
-    model="gpt-4o-mini",
+    model="gemma-3-27b-it",
     messages=[
         {
             "role": "user",
