@@ -7,45 +7,77 @@ from gradio_client import Client as Client_gradio
 from gradio_client import handle_file
 from PIL import Image
 
-types = ["拍內衣形象照", "日常生活照", "戶外旅遊照", "運動照", "上班工作照"]
-
-def pick_elements(category, n=1):
-    return random.sample(category, n)
-
-chosen = {
-    "types": pick_elements(types)
+# === 1. 定義豐富的隨機元素庫 (增加多樣性與細節) ===
+categories = {
+    "themes": [
+        "拍內衣形象照 (Lingerie Photoshoot)", 
+        "日常生活照 (Casual Daily Life)", 
+        "戶外旅遊照 (Luxury Travel)", 
+        "健身房運動照 (Fitness & Gym)", 
+        "OL上班工作照 (Office Lady Style)", 
+        "居家男友視角 (POV at Home)",
+        "海邊夕陽泳裝 (Sunset Beach Swimwear)"
+    ],
+    "lighting": [
+        "Golden hour sunlight (黃金時段陽光)", 
+        "Soft window light (柔和窗光)", 
+        "Cinematic studio lighting (電影級攝影棚光)", 
+        "Bright natural daylight (明亮自然光)",
+        "Rembrandt lighting (倫勃朗光)"
+    ],
+    "angles": [
+        "Eye-level shot (平視)", 
+        "Low angle shot (低角度仰拍, 顯腿長)", 
+        "High angle selfie (高角度自拍)", 
+        "Dutch angle (荷蘭式傾斜, 動感)", 
+        "Close-up on face (臉部特寫)"
+    ],
+    "expressions": [
+        "Seductive smile (誘惑微笑)", 
+        "Innocent look (無辜眼神)", 
+        "Confidence smirk (自信壞笑)", 
+        "Biting lip slightly (輕咬嘴唇)", 
+        "Looking directly into the camera with intense eyes (深情注視鏡頭)"
+    ]
 }
 
+def get_random_elements():
+    return {
+        "theme": random.choice(categories["themes"]),
+        "light": random.choice(categories["lighting"]),
+        "angle": random.choice(categories["angles"]),
+        "expression": random.choice(categories["expressions"])
+    }
+
+chosen = get_random_elements()
+
+# === 2. 設計大師級 Prompt Template ===
+# 這裡加入了針對 IG 演算法會喜歡的元素：高清晰度、完美皮膚、網紅風格
 prompt_template = f"""
-請作為一名專業的影像生成提示詞（Prompt）設計師。你的任務是為 AI 影像生成模型創建一個高度詳細、描述豐富的 prompt。每次生成都應遵循以下嚴格的結構和內容要求，以確保產出的影像具有電影級的真實感、藝術品質和豐富的細節。
-提示詞結構要求：
-開頭定調 (Opening Statement)： 必須以 This is a high-resolution photograph of... 或 The image is a cinematic, ultra-detailed photograph featuring... 開頭，強調高解析度、寫實性和細節。
-核心主體描述 (Core Subject Description)：
-人物概況： 包含性別、大致年齡（如 "in her late 20s"）、種族/外貌特徵（如 "East Asian woman"）。
-膚色與質感： 描述膚色（如 "fair complexion," "tanned skin"）和可能的質感（如 "smooth skin"）。
-髮型： 髮色、長度、質地和具體髮型（如 "long, straight black hair," "curly red hair tied in a bun"）。
-表情與姿態： 臉部表情（如 "smiling warmly," "contemplative expression"）、眼神（如 "expressive eyes"）和具體的肢體動作（如 "her left arm is raised, with her hand resting on the back of her head," "standing casually with hands in pockets"）。
-臉部特徵： 鼻形、唇形、唇膏顏色、臉型等（如 "delicate facial features, with high cheekbones, a small nose, and full lips painted with a soft pink lipstick"）。
-衣著與配件 (Attire & Accessories)：
-服裝類型： 詳細說明上衣、下裝、外套等具體衣物（如 "a light gray sports bra," "a deep burgundy V-neck crop top," "low-rise, light blue denim shorts"）。
-服裝細節： 剪裁、材質、款式、顏色、以及對身材的影響（如 "accentuates her ample breasts," "deep V-neckline, which reveals a significant amount of cleavage," "smooth, stretchy fabric that clings to her body"）。
-配件： 任何珠寶、手錶、包包、帽子等（如 "a delicate gold necklace with a small, black cross pendant," "long, dangling earrings that feature a crescent moon and star design"）。
-背景環境 (Background Setting)：
-場景類型： 描述是室內、室外、城市、自然等。
-具體物件： 場景中的主要元素，如家具、建築、自然景觀、特定道具（如 "a wooden door to her left and a traditional Japanese-style sliding door to her right," "modern, well-lit gym," "cityscape with tall buildings is visible outside the window"）。
-背景細節： 顏色、材質、紋理（如 "soft, mauve curtain that is slightly textured," "walls are painted a neutral color"）。
-光線與氛圍 (Lighting & Ambiance)：
-光線類型： 自然光、人造光、光源方向（如 "soft and even," "bright and even," "natural light to flood the room"）。
-光線效果： 光線如何影響主體和場景（如 "casting a gentle glow on her skin and highlighting the contours of her body," "illuminating her face and the surrounding area"）。
-整體氛圍： 影像想要傳達的情緒或感覺（如 "intimate and inviting," "casual, intimate setting," "clean and modern," "warm and intimate moment"）。
-特殊元素/互動 (Optional: Special Elements/Interaction)：
-如果需要，可以包含其他角色、動物、或主體與環境/其他物件的互動（如 "a white cat with a fluffy coat is playfully pawing at her chest"）。這些元素應詳細描述其動作和對整體氛圍的貢獻。
-輸出格式要求：
-每次生成應只輸出一個完整的 prompt，不包含任何額外說明或對話。
-prompt 應是流暢、連貫的英文段落。
-長度應足夠詳盡，一般至少包含 5-8 句話，甚至更多。
-請避免模糊或籠統的詞語，力求具體和可視化。
-現在，請根據上述 instruction，為一個年輕火辣性感的日系AV女優的 IG 日常照片(畫面要明亮清晰、不要昏暗 陰影過多) 穿著性感 {', '.join(chosen['types'])} 創作一個詳細的影像生成 prompt。"""
+Act as a world-class AI art director and photographer. Create a prompt for an ultra-realistic, viral Instagram photo.
+
+**Target Subject:** 
+A stunningly beautiful, young, sexy Japanese female model (Idol/Influencer aesthetic). She looks like a top-tier gravure idol. 
+Key features: Flawless but realistic skin texture (visible pores, faint vellus hair), large expressive eyes, cute yet seductive face, fit and curvy body shape (slim waist, ample chest), straight black silky hair.
+
+**Current Scenario:**
+- **Theme/Activity:** {chosen['theme']}
+- **Lighting:** {chosen['light']} - Ensure the scene is bright, clear, and professional. NO heavy shadows or dark gloom.
+- **Camera Angle:** {chosen['angle']}
+- **Expression:** {chosen['expression']}
+
+**Detailed Instructions:**
+1. **Opening:** Start with "A raw, ultra-realistic 8k photograph of..."
+2. **Fashion:** Describe her outfit in extreme detail based on the theme. It must be trendy, sexy, and form-fitting to accentuate her curves. Mention fabric textures (e.g., silk, lace, denim, sheer).
+3. **Environment:** Describe a high-end, aesthetic background (e.g., luxury cafe, modern apartment, sunny street in Tokyo). Blur the background (bokeh) to focus on her.
+4. **Action:** Describe a natural, candid moment. She should look like she is interacting with her fans or the photographer.
+5. **Quality Boosters:** Incorporate photography keywords: "Shot on Sony A7R IV", "85mm f/1.4 GM lens", "Depth of field", "Ray tracing", "Global illumination".
+
+**Output Format:**
+- Write ONLY the prompt paragraph.
+- Do NOT write "Here is the prompt".
+- Keep it continuous and descriptive (approx 100-150 words).
+"""
 
 # === Step 1: 用 g4f GPT-4o 生成高品質繪圖 prompt ===
 client = Client_g4f()
@@ -62,7 +94,7 @@ response = client.chat.completions.create(
     ]
 )
 right_prompt = response.choices[0].message.content.strip() if 'sorry' not in response.choices[0].message.content.strip() else ''
-image_prompt = right_prompt + """8k photo, Large breasts, deep cleavage, ample cleavage，sexy photo, beautilful korean girl without makeup"""
+image_prompt = right_prompt + """8k photo, Large breasts, deep cleavage, ample cleavage, sexy photo, beautilful girl without makeup"""
 print("🎨 Prompt:", image_prompt)
 
 # === Step 2: 定義並選取圖片尺寸（所有尺寸皆 ≥ 1024） ===
@@ -80,8 +112,8 @@ result = client.predict(
     prompt=image_prompt,
     resolution='1104x1472 ( 3:4 )',
     seed=42,
-    steps=12,
-    shift=10,
+    steps=9,
+    shift=5,
     random_seed=True,
     gallery_images=[],
     api_name="/generate"
