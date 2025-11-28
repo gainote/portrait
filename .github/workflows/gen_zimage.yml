@@ -1,4 +1,4 @@
-name: Generate Qwen AI Image
+name: Generate Zimage AI Image
 
 on:
   schedule:
