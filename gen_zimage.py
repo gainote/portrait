@@ -75,7 +75,7 @@ width = size_choice["width"]
 height = size_choice["height"]
 
 # === Step 3: 調用 Z-Image-Turbo 模型產圖 ===
-client = Client("Tongyi-MAI/Z-Image-Turbo")
+client = Client_gradio("Tongyi-MAI/Z-Image-Turbo")
 result = client.predict(
     prompt=image_prompt,
     resolution='896x1600 ( 9:16 )',
