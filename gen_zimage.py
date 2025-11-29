@@ -129,7 +129,7 @@ image_index = len(existing_files) + 1
 # output_path = os.path.join(folder_path, filename)
 
 # # === Step 5: 將 .webp 轉存為 .webp ===
-# webp_path = result[0][0]['image']
+# webp_path = result[0]
 
 # with Image.open(webp_path) as img:
 #     img.save(output_path, "WEBP", quality=85)  # 可調整品質（預設 80–85）
@@ -141,7 +141,7 @@ output_path = os.path.join(folder_path, f"{base_filename}.webp")
 thumb_path = os.path.join(folder_path, f"{base_filename}_thumb.webp")
 
 # === Step 5: 讀取原始 .webp 並儲存原圖與縮圖 ===
-webp_path = result[0][0]['image']  # ← 你的來源 .webp 圖檔路徑
+webp_path = result[0]  # ← 你的來源 .webp 圖檔路徑
 
 client = Client_gradio("OzzyGT/basic_upscaler")
 result = client.predict(
