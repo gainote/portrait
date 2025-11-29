@@ -107,16 +107,15 @@ width = size_choice["width"]
 height = size_choice["height"]
 
 # === Step 3: 調用 Z-Image-Turbo 模型產圖 ===
-client = Client_gradio("Tongyi-MAI/Z-Image-Turbo")
+client = Client_gradio("victor/Z-Image-Turbo-MCP")
 result = client.predict(
     prompt=image_prompt,
-    resolution='1104x1472 ( 3:4 )',
+    resolution='864x1152 ( 3:4 )',
     seed=42,
-    steps=9,
-    shift=5,
+    steps=12,
+    shift=3,
     random_seed=True,
-    gallery_images=[],
-    api_name="/generate"
+    api_name="/generate_image"
 )
 
 # === Step 4: 建立日期資料夾與檔名 ===
