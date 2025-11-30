@@ -95,7 +95,7 @@ try:
   )
 except:
   response = client.chat.completions.create(
-      model="auto",
+      model="gpt-5-mini",
       messages=[
           {
               "role": "user",
