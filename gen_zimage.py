@@ -81,18 +81,30 @@ Key features: Flawless but realistic skin texture (visible pores, faint vellus h
 
 # === Step 1: 用 g4f GPT-4o 生成高品質繪圖 prompt ===
 client = Client_g4f()
-
-response = client.chat.completions.create(
-    model="gemma-3-27b-it",
-    messages=[
-        {
-            "role": "user",
-            "content": (
-                prompt_template
-            )
-        }
-    ]
-)
+try:
+  response = client.chat.completions.create(
+      model="gemma-3-27b-it",
+      messages=[
+          {
+              "role": "user",
+             "content": (
+                  prompt_template
+              )
+          }
+      ]
+  )
+except:
+  response = client.chat.completions.create(
+      model="auto",
+      messages=[
+          {
+              "role": "user",
+             "content": (
+                  prompt_template
+              )
+          }
+      ]
+  )
 right_prompt = response.choices[0].message.content.strip() if 'sorry' not in response.choices[0].message.content.strip() else ''
 image_prompt = right_prompt + """8k photo, Large breasts, deep cleavage, ample cleavage, sexy photo, beautilful girl without makeup"""
 print("🎨 Prompt:", image_prompt)
