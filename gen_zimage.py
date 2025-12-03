@@ -204,7 +204,7 @@ try:
   )
 except:
   response = client.chat.completions.create(
-      model="gemini-2.5-flash",
+      model="gemini-2.5-flash-lite",
       messages=[
           {
               "role": "user",
@@ -217,7 +217,7 @@ except:
 right_prompt = response.choices[0].message.content.strip()
 image_prompt = right_prompt + """8k photo, Large breasts, deep cleavage, ample cleavage, sexy photo, beautilful girl without makeup"""
 if 'sorry' in image_prompt or 'The model does not exist' in image_prompt:
-	image_prompt = False
+	image_prompt = str(chosen)
 print("🎨 Prompt:", image_prompt)
 
 # === Step 2: 定義並選取圖片尺寸（所有尺寸皆 ≥ 1024） ===
