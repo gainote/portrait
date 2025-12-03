@@ -145,6 +145,7 @@ def get_random_elements():
         "theme": random.choice(categories["themes"]),
         "light": random.choice(categories["lighting"]),
         "angle": random.choice(categories["angles"]),
+        "expressions": random.choice(categories["expressions"]),
         "outfits": random.choice(categories["outfits"]),
         "locations": random.choice(categories["locations"]),
         "moods": random.choice(categories["moods"]),
@@ -167,7 +168,7 @@ Key features: Flawless but realistic skin texture (visible pores, faint vellus h
 - **Theme/Activity:** {chosen['theme']}
 - **Lighting:** {chosen['light']} - Ensure the scene is bright, clear, and professional. NO heavy shadows or dark gloom.
 - **Camera Angle:** {chosen['angle']}
-- **Expression:** {chosen['expression']}
+- **Expression:** {chosen['expressions']}
 - **outfits:** {chosen['outfits']}
 - **locations:** {chosen['locations']}
 - **moods:** {chosen['moods']}
