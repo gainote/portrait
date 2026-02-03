@@ -7,138 +7,206 @@ from gradio_client import Client as Client_gradio
 from gradio_client import handle_file
 from PIL import Image
 
-# === 1. 定義豐富的隨機元素庫 (增加多樣性與細節) ===
+# === 超級擴充版隨機元素庫 (Mega Random Prompt Library) ===
+
 categories = {
     "themes": [
-        "拍內衣形象照 (Lingerie Photoshoot)", 
-        "日常生活照 (Casual Daily Life)", 
-        "戶外旅遊照 (Luxury Travel)", 
-        "健身房運動照 (Fitness & Gym)", 
-        "OL上班工作照 (Office Lady Style)", 
-        "居家男友視角 (POV at Home)",
-        "海邊夕陽泳裝 (Sunset Beach Swimwear)",
-        "咖啡廳網美打卡照 (Trendy Café Influencer Shot)",
-        "逛街購物戰利品照 (Shopping Haul Outfit Shot)",
-        "夜店派對酒吧照 (Nightlife & Club Scene)",
-        "頂樓高空酒吧時尚照 (Rooftop Bar Fashion Portrait)",
-        "飯店房間慵懶早晨 (Cozy Hotel Morning)",
-        "閱讀書本文青風 (Bookish Aesthetic Reading)",
-        "藝術感黑白人像 (Artistic Black & White Portrait)",
-        "雨天撐傘街拍 (Rainy Day Street Style)",
-        "城市夜景霓虹風 (Neon City Night Portrait)"
+        # === 經典人像 ===
+        "拍內衣形象照 (Lingerie Photoshoot)", "日常生活照 (Casual Daily Life)", "戶外旅遊照 (Luxury Travel)", 
+        "健身房運動照 (Fitness & Gym)", "OL上班工作照 (Office Lady Style)", "居家男友視角 (POV at Home)",
+        "海邊夕陽泳裝 (Sunset Beach Swimwear)", "咖啡廳網美打卡照 (Trendy Café Influencer Shot)",
+        "逛街購物戰利品照 (Shopping Haul Outfit Shot)", "夜店派對酒吧照 (Nightlife & Club Scene)",
+        "頂樓高空酒吧時尚照 (Rooftop Bar Fashion Portrait)", "飯店房間慵懶早晨 (Cozy Hotel Morning)",
+        "閱讀書本文青風 (Bookish Aesthetic Reading)", "藝術感黑白人像 (Artistic Black & White Portrait)",
+        "雨天撐傘街拍 (Rainy Day Street Style)", "城市夜景霓虹風 (Neon City Night Portrait)",
+        # === 職業與角色 ===
+        "俏皮護理師風格 (Playful Nurse Aesthetic)", "帥氣女賽車手 (Cool Female Racer)",
+        "空服員制服照 (Flight Attendant Uniform)", "日系高校生 (Japanese High School Student)",
+        "優雅芭蕾舞者 (Elegant Ballet Dancer)", "搖滾樂團吉他手 (Rock Band Guitarist)",
+        "專業瑜珈導師 (Professional Yoga Instructor)", "古典畫家作畫中 (Classical Painter at Work)",
+        "網球場運動風 (Tennis Court Sporty)", "高爾夫球場揮桿 (Golf Course Swing)",
+        # === 特殊氛圍 ===
+        "賽博龐克科幻風 (Cyberpunk Sci-Fi Style)", "90年代復古底片風 (90s Retro Film Vibe)",
+        "漢服/古裝寫真 (Traditional Hanfu/Costume)", "日式和服櫻花季 (Kimono at Cherry Blossom Season)",
+        "蒸汽龐克風格 (Steampunk Aesthetic)", "波希米亞流浪風 (Bohemian Wanderlust)",
+        "末日廢墟探險 (Post-Apocalyptic Ruins Exploration)", "夢幻仙女森林 (Fairy Tale Forest)",
+        "奢華遊艇派對 (Luxury Yacht Party)", "滑雪場雪地裝 (Snowy Ski Resort Style)",
+        "廚房做甜點 (Baking in the Kitchen)", "剛洗完澡的濕髮感 (Wet Hair After Shower)",
+        "車內副駕駛視角 (Passenger Seat Car Selfie)", "露營營火晚會 (Camping Bonfire Night)",
+        "圖書館安靜讀書 (Quiet Library Study Session)", "地下樂團Live House (Underground Live House)",
+        "超市推車俏皮照 (Supermarket Shopping Cart Playful)", "洗衣店等待時光 (Laundromat Waiting Vibe)",
+        "電競少女 (Gamer Girl with Headset)", "重機騎士風格 (Motorcycle Biker Style)"
     ],
 
     "lighting": [
-        "Golden hour sunlight (黃金時段陽光)", 
-        "Soft window light (柔和窗光)", 
-        "Cinematic studio lighting (電影級攝影棚光)", 
-        "Bright natural daylight (明亮自然光)",
-        "Rembrandt lighting (倫勃朗光)",
-        "Neon sign lighting (霓虹燈打光)",
-        "Backlit silhouette (逆光剪影效果)",
-        "Softbox beauty lighting (柔光箱人像打光)",
-        "Moody low-key lighting (低調暗調光)",
-        "Fairy lights bokeh (小燈串散景光點)",
-        "Overcast soft sky light (陰天柔和自然光)"
+        # === 自然光 ===
+        "Golden hour sunlight (黃金時段陽光)", "Soft window light (柔和窗光)", 
+        "Bright natural daylight (明亮自然光)", "Overcast soft sky light (陰天柔和自然光)",
+        "Blue hour moody light (藍調時刻)", "Dappled light through leaves (樹葉間隙光斑)",
+        "Morning mist diffused light (晨霧柔光)", "Direct hard sunlight (直射強烈陽光)",
+        "Sunset silhouette (夕陽剪影)", "Moonlight glow (月光微光)",
+        # === 人造光/影棚 ===
+        "Cinematic studio lighting (電影級攝影棚光)", "Rembrandt lighting (倫勃朗光)",
+        "Neon sign lighting (霓虹燈打光)", "Softbox beauty lighting (柔光箱人像打光)",
+        "Ring light reflection in eyes (環形燈眼神光)", "Butterfly lighting (蝴蝶光/美人光)",
+        "Split lighting (側光/陰陽臉)", "Rim lighting (邊緣光/輪廓光)",
+        "Colorful gel lighting (彩色濾色片打光)", "Flash photography style (閃光燈直打風格)",
+        "Projector overlay pattern (投影機圖案覆蓋)", "Candlelight warm glow (燭光溫暖微光)",
+        "Fairy lights bokeh (小燈串散景光點)", "Car headlights beam (車頭燈光束)",
+        "Refrigerator light glow (冰箱開門光)", "Monitor screen glow (螢幕藍光映照)",
+        "Disco ball reflection (迪斯可球反射光)", "Fireplace warm light (壁爐火光)",
+        "Streetlight amber glow (路燈琥珀色光)", "Under-lighting horror style (底光/恐怖風格)",
+        "God rays/Volumetric light (耶穌光/體積光)", "Cyberpunk dual tone (賽博龐克雙色光)"
     ],
 
     "angles": [
-        "Eye-level shot (平視)", 
-        "Low angle shot (低角度仰拍, 顯腿長)", 
-        "High angle selfie (高角度自拍)", 
-        "Dutch angle (荷蘭式傾斜, 動感)", 
-        "Close-up on face (臉部特寫)",
-        "Three-quarter body shot (三分之四身構圖)",
-        "Over-the-shoulder shot (從肩後視角拍攝)",
-        "Side profile shot (側臉人像構圖)",
-        "Mirror reflection shot (鏡中倒影構圖)",
-        "From behind walking away (背影邊走邊拍)",
-        "Extreme close-up on eyes (眼睛極近距離特寫)"
+        # === 基本角度 ===
+        "Eye-level shot (平視)", "Low angle shot (低角度仰拍, 顯腿長)", 
+        "High angle selfie (高角度自拍)", "Dutch angle (荷蘭式傾斜, 動感)", 
+        "Side profile shot (側臉人像構圖)", "From behind walking away (背影邊走邊拍)",
+        "Three-quarter body shot (三分之四身構圖)", "Full body wide shot (全身廣角)",
+        # === 特寫與細節 ===
+        "Close-up on face (臉部特寫)", "Extreme close-up on eyes (眼睛極近距離特寫)",
+        "Focus on lips (嘴唇特寫)", "Focus on hands (手部動作特寫)",
+        "Collarbone highlight (鎖骨特寫)", "Legs crossed shot (腿部交叉特寫)",
+        # === 特殊視角 ===
+        "Over-the-shoulder shot (從肩後視角拍攝)", "Mirror reflection shot (鏡中倒影構圖)",
+        "POV dating style (男友視角約會感)", "Drone aerial view (無人機俯視)",
+        "GoPro wide angle (GoPro廣角運動感)", "Fisheye lens distortion (魚眼變形效果)",
+        "Through the window glass (隔著玻璃拍攝)", "Looking back at camera (回眸一笑)",
+        "Lying down on bed from above (躺在床上俯拍)", "Upside down framing (倒置構圖)",
+        "Peeking from behind object (躲在物體後偷看)", "Reflection in sunglasses (墨鏡倒影)",
+        "Through keyhole vibe (鑰匙孔偷窺視角)", "Security camera footage style (監視器畫面風格)",
+        "Selfie looking in mirror (對鏡自拍)", "Bottom-up from shoe view (鞋底視角仰拍)"
     ],
 
     "expressions": [
-        "Seductive smile (誘惑微笑)", 
-        "Innocent look (無辜眼神)", 
-        "Confidence smirk (自信壞笑)", 
-        "Biting lip slightly (輕咬嘴唇)", 
-        "Looking directly into the camera with intense eyes (深情注視鏡頭)",
-        "Playful wink (俏皮眨眼)",
-        "Gentle soft smile (溫柔微笑)",
-        "Daydreaming gaze away from camera (望向遠方出神)",
-        "Shy smile while looking down (害羞低頭微笑)",
-        "Cool and distant expression (冷酷高冷臉)",
-        "Laughing naturally (自然大笑瞬間)"
+        # === 誘惑與魅力 ===
+        "Seductive smile (誘惑微笑)", "Confidence smirk (自信壞笑)", "Biting lip slightly (輕咬嘴唇)",
+        "Looking directly into the camera with intense eyes (深情注視鏡頭)", "Playful wink (俏皮眨眼)",
+        "Tongue out playfully (俏皮吐舌)", "Finger near lips (手指輕觸嘴唇)", 
+        "Messy hair bedhead look (剛睡醒慵懶樣)", "Pulling sunglasses down (拉下墨鏡注視)",
+        # === 溫柔與自然 ===
+        "Innocent look (無辜眼神)", "Gentle soft smile (溫柔微笑)", 
+        "Laughing naturally (自然大笑瞬間)", "Shy smile while looking down (害羞低頭微笑)",
+        "Daydreaming gaze away from camera (望向遠方出神)", "Eyes closed enjoying breeze (閉眼享受微風)",
+        "Holding back laughter (忍俊不禁)", "Surprised expression (驚喜表情)",
+        # === 冷酷與情緒 ===
+        "Cool and distant expression (冷酷高冷臉)", "Sad teary eyes (含淚傷感)",
+        "Bored resting bitch face (厭世臉)", "Angry pout (生氣嘟嘴)",
+        "Determined focus (專注堅定)", "Skeptical raised eyebrow (挑眉懷疑)",
+        "Yawning cute (可愛打哈欠)", "Blow kiss (飛吻)",
+        "Drinking from straw (咬吸管)", "Eating strawberry (吃草莓瞬間)",
+        "Applying lipstick (塗口紅)", "Fixing hair (整理頭髮)",
+        "Whispering secret (竊竊私語樣)", "Scared or shocked (受驚嚇)"
     ],
 
-    # 新增：服裝風格
     "outfits": [
-        "優雅連身洋裝 (Elegant Dress Style)",
-        "oversized 衛衣搭配熱褲 (Oversized Hoodie with Shorts)",
-        "運動內衣與瑜伽褲 (Sports Bra & Yoga Pants)",
-        "合身西裝外套與鉛筆裙 (Blazer & Pencil Skirt)",
-        "牛仔外套配小可愛背心 (Denim Jacket with Crop Top)",
-        "絲質睡衣套裝 (Silky Loungewear Set)",
-        "比基尼與罩衫 (Bikini with Cover-up)",
-        "簡約白T配直筒牛仔褲 (White Tee & Straight Jeans)",
-        "針織毛衣配短裙 (Knit Sweater & Skirt)",
-        "韓系學院風穿搭 (Korean Preppy Style)"
+        # === 休閒與街頭 ===
+        "oversized 衛衣搭配熱褲 (Oversized Hoodie with Shorts)", "簡約白T配直筒牛仔褲 (White Tee & Straight Jeans)",
+        "牛仔外套配小可愛背心 (Denim Jacket with Crop Top)", "韓系學院風穿搭 (Korean Preppy Style)",
+        "皮革騎士外套 (Leather Biker Jacket)", "格子襯衫綁腰間 (Plaid Shirt Around Waist)",
+        "露肚臍短版上衣 (Crop Top showing Midriff)", "吊帶褲工裝風 (Dungarees / Overalls)",
+        "連帽運動套裝 (Matching Tracksuit)", "棒球外套校園風 (Varsity Jacket)",
+        # === 氣質與正裝 ===
+        "優雅連身洋裝 (Elegant Dress Style)", "合身西裝外套與鉛筆裙 (Blazer & Pencil Skirt)",
+        "針織毛衣配短裙 (Knit Sweater & Skirt)", "高領緊身毛衣 (Tight Turtleneck)",
+        "露背晚禮服 (Backless Evening Gown)", "絲質細肩帶洋裝 (Silk Slip Dress)",
+        "法式碎花裙 (French Floral Sundress)", "香奈兒風粗花呢套裝 (Tweed Suit)",
+        "風衣外套 (Trench Coat)", "旗袍改良款 (Modern Cheongsam)",
+        # === 性感與居家 ===
+        "絲質睡衣套裝 (Silky Loungewear Set)", "運動內衣與瑜伽褲 (Sports Bra & Yoga Pants)",
+        "比基尼與罩衫 (Bikini with Cover-up)", "蕾絲連體衣 (Lace Bodysuit)",
+        "寬鬆男友襯衫 (Oversized Boyfriend Shirt)", "日系死庫水泳裝 (Japanese School Swimsuit)",
+        "網襪與短裙 (Fishnets and Skirt)", "浴袍 (Bathrobe)",
+        "高衩泳裝 (High-cut Swimsuit)", "膝上襪絕對領域 (Thigh-high Socks with Skirt)",
+        # === 特殊服裝 ===
+        "女僕裝 (Maid Costume)", "水手服 (Sailor Uniform)",
+        "兔女郎裝 (Bunny Girl Costume)", "迷彩軍裝風 (Camo Military Style)",
+        "哥德蘿莉裝 (Gothic Lolita)", "漢服 (Hanfu)", "和服/浴衣 (Kimono/Yukata)",
+        "網球裙裝 (Tennis Skirt Set)", "滑雪裝 (Ski Suit)", "潛水衣 (Wetsuit)"
     ],
 
-    # 新增：場景 / 地點
     "locations": [
-        "落地窗旁沙發 (By the big window on a sofa)",
-        "高級飯店房間 (Luxury hotel room)",
-        "泳池邊躺椅 (Poolside sunbed)",
-        "健身房鏡子前 (In front of gym mirror)",
-        "都市街頭斑馬線 (City crosswalk streetshot)",
-        "屋頂停車場 (Rooftop parking lot)",
-        "森林步道 (Forest pathway)",
-        "沙灘海岸線 (Sandy beach shoreline)",
-        "咖啡廳窗邊座位 (Window seat at a café)",
-        "書牆前的閱讀角落 (Reading corner with bookshelves)"
+        # === 居家與室內 ===
+        "落地窗旁沙發 (By the big window on a sofa)", "高級飯店房間 (Luxury hotel room)",
+        "健身房鏡子前 (In front of gym mirror)", "廚房流理台 (Kitchen counter)",
+        "浴室充滿水蒸氣 (Steamy bathroom)", "凌亂的床鋪 (Messy bed)",
+        "衣帽間鏡子前 (Walk-in closet mirror)", "復古黑膠唱片行 (Vinyl record store)",
+        "洗衣店滾筒前 (Laundromat machines)", "電梯內自拍 (Inside elevator)",
+        "便利商店貨架間 (Convenience store aisles)", "美術館畫作前 (Art gallery)",
+        # === 城市與建築 ===
+        "都市街頭斑馬線 (City crosswalk streetshot)", "屋頂停車場 (Rooftop parking lot)",
+        "咖啡廳窗邊座位 (Window seat at a café)", "書牆前的閱讀角落 (Reading corner with bookshelves)",
+        "地鐵車廂內 (Inside subway train)", "地鐵站手扶梯 (Subway escalator)",
+        "摩天大樓觀景台 (Skyscraper observation deck)", "廢棄工廠 (Abandoned factory)",
+        "紅磚牆小巷 (Red brick alleyway)", "霓虹燈招牌下 (Under neon signs)",
+        "電話亭內 (Inside telephone booth)", "旋轉木馬前 (In front of carousel)",
+        # === 自然與戶外 ===
+        "泳池邊躺椅 (Poolside sunbed)", "森林步道 (Forest pathway)",
+        "沙灘海岸線 (Sandy beach shoreline)", "花海中央 (Middle of flower field)",
+        "懸崖邊緣 (Cliff edge)", "沙漠沙丘 (Desert dunes)",
+        "雪地森林 (Snowy forest)", "熱帶雨林瀑布 (Tropical waterfall)",
+        "遊艇甲板 (Yacht deck)", "稻田中央 (Rice paddy field)",
+        "櫻花樹下 (Under cherry blossom tree)", "秋天落葉堆 (Pile of autumn leaves)"
     ],
 
-    # 新增：情緒 / 氣氛
     "moods": [
-        "Cozy and intimate (溫馨親密感)",
-        "Chic and fashionable (時尚高級感)",
-        "Playful and cute (俏皮可愛氛圍)",
-        "Cool and independent (酷帥獨立感)",
-        "Relaxed weekend vibe (放鬆週末感)",
-        "Dreamy and soft (夢幻柔焦風)",
-        "Energetic and sporty (充滿活力運動風)",
-        "Luxury lifestyle (高級生活質感)",
-        "Mystery and allure (神秘魅惑氛圍)",
-        "Minimalist clean aesthetic (極簡清爽感)"
+        # === 正面與活力 ===
+        "Cozy and intimate (溫馨親密感)", "Playful and cute (俏皮可愛氛圍)",
+        "Energetic and sporty (充滿活力運動風)", "Relaxed weekend vibe (放鬆週末感)",
+        "Joyful and radiant (快樂光彩照人)", "Fresh and innocent (清新純真感)",
+        "Adventurous spirit (冒險精神)", "Whimsical and magical (異想天開魔法感)",
+        # === 時尚與高級 ===
+        "Chic and fashionable (時尚高級感)", "Luxury lifestyle (高級生活質感)",
+        "Minimalist clean aesthetic (極簡清爽感)", "Elegant and sophisticated (優雅世故)",
+        "Avant-garde artistic (前衛藝術感)", "Vintage nostalgic (復古懷舊感)",
+        # === 情感與氛圍 ===
+        "Cool and independent (酷帥獨立感)", "Dreamy and soft (夢幻柔焦風)",
+        "Mystery and allure (神秘魅惑氛圍)", "Melancholic and deep (憂鬱深沉)",
+        "Romantic and passionate (浪漫熱情)", "Dark and moody (暗黑情緒感)",
+        "Ethereal and angelic (空靈天使感)", "Dangerous and edgy (危險邊緣感)",
+        "Lazy and sluggish (慵懶頹廢感)", "Lonely urban vibes (孤獨城市感)",
+        "Chaotic energy (混亂能量)", "Zen and peaceful (禪意平靜)"
     ],
 
-    # 新增：色調 / 風格
     "color_grades": [
-        "Warm and golden tones (溫暖金黃色調)",
-        "Cool blue city tones (冷色系城市感)",
-        "Pastel soft colors (粉彩小清新色調)",
-        "High contrast and sharp (高反差銳利風)",
-        "Film look grainy (類底片顆粒質感)",
-        "Desaturated muted tones (低飽和性冷淡風)",
-        "Vibrant and colorful (高飽和鮮豔色調)",
-        "Black and white classic (黑白經典人像)"
+        # === 色調風格 ===
+        "Warm and golden tones (溫暖金黃色調)", "Cool blue city tones (冷色系城市感)",
+        "Pastel soft colors (粉彩小清新色調)", "High contrast and sharp (高反差銳利風)",
+        "Film look grainy (類底片顆粒質感)", "Desaturated muted tones (低飽和性冷淡風)",
+        "Vibrant and colorful (高飽和鮮豔色調)", "Black and white classic (黑白經典人像)",
+        "Sepia vintage tone (褐色復古色調)", "Cyberpunk neon purple/blue (賽博龐克紫藍色調)",
+        "Teal and Orange cinematic (青橙電影色調)", "Matte finish (霧面質感)",
+        "Kodak Portra 400 style (柯達Portra底片風)", "Fujifilm simulation (富士軟片模擬)",
+        "Dark moody green (暗調墨綠風格)", "Dreamy pink haze (夢幻粉紅迷霧)",
+        "Bleach bypass (漂白效果/高對比低飽和)", "Monochrome red (單色紅調)",
+        "Overexposed high key (過曝高調風格)", "Underexposed low key (欠曝低調風格)"
     ],
 
-    # 新增：道具
     "props": [
-        "咖啡杯 (Coffee cup)",
-        "手機自拍 (Using phone for mirror selfie)",
-        "筆電與桌上文件 (Laptop and work documents)",
-        "健身啞鈴或彈力帶 (Dumbbells or resistance bands)",
-        "時尚手提包 (Designer handbag)",
-        "太陽眼鏡 (Sunglasses)",
-        "書本或雜誌 (Book or magazine)",
-        "香檳或雞尾酒杯 (Champagne or cocktail glass)",
-        "小燈串、蠟燭 (Fairy lights or candles)",
-        "毯子與枕頭 (Blanket and pillows for cozy bed scene)"
+        # === 手持小物 ===
+        "咖啡杯 (Coffee cup)", "手機自拍 (Using phone for mirror selfie)",
+        "香檳或雞尾酒杯 (Champagne or cocktail glass)", "拍立得相機 (Polaroid camera)",
+        "一束鮮花 (Bouquet of flowers)", "冰淇淋甜筒 (Ice cream cone)",
+        "透明雨傘 (Transparent umbrella)", "手持煙火/仙女棒 (Sparklers)",
+        "香菸 (Cigarette - artistic)", "棒棒糖 (Lollipop)",
+        # === 穿戴配件 ===
+        "時尚手提包 (Designer handbag)", "太陽眼鏡 (Sunglasses)",
+        "寬沿草帽 (Wide brim straw hat)", "全罩式耳機 (Over-ear headphones)",
+        "頸鍊 (Choker)", "黑框眼鏡 (Black rimmed glasses)",
+        "珍珠項鍊 (Pearl necklace)", "絲巾 (Silk scarf)",
+        # === 場景道具 ===
+        "筆電與桌上文件 (Laptop and work documents)", "健身啞鈴或彈力帶 (Dumbbells or resistance bands)",
+        "書本或雜誌 (Book or magazine)", "小燈串 (Fairy lights)",
+        "毯子與枕頭 (Blanket and pillows)", "吉他或烏克麗麗 (Guitar or Ukulele)",
+        "畫筆與調色盤 (Paintbrush and palette)", "瑜珈墊 (Yoga mat)",
+        "復古腳踏車 (Vintage bicycle)", "滑板 (Skateboard)",
+        "泰迪熊玩偶 (Teddy bear)", "一籃水果 (Basket of fruit)",
+        "衝浪板 (Surfboard)", "行李箱 (Suitcase)",
+        "氣球束 (Bunch of balloons)", "寵物狗或貓 (Pet dog or cat)"
     ]
 }
-
 
 def get_random_elements():
     return {
