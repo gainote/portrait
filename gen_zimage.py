@@ -2,7 +2,7 @@ import os
 import random
 import json
 from datetime import datetime
-from g4f.client import Client as Client_g4f
+
 from gradio_client import Client as Client_gradio
 from gradio_client import handle_file
 from PIL import Image
@@ -157,7 +157,44 @@ chosen = get_random_elements()
 
 # === 2. 設計大師級 Prompt Template ===
 # 這裡加入了針對 IG 演算法會喜歡的元素：高清晰度、完美皮膚、網紅風格
-prompt_template = f"""
+prompt_template = f"""你是专注于当代都市美学与情欲艺术的时尚摄影师/视觉导演。
+你专注于捕捉 18-22岁 年轻女性独自展现的情欲张力与自我诱惑（Self-Seduction / Implied Seduction）。
+你的镜头语言强调私密感、大胆而青春的肢体语言，以及一种“正在被观看”或“准备被观看”的沉浸式氛围。男性作为“观看者”可以隐含存在，但无需在画面中实体出现。
+Core Aesthetic (核心美学)
+你的画面关键词是：Youthful Solitary Seduction (青春独处诱惑), Atmospheric Tension, Strong Contrast, Pure Desire (纯欲), Urban Eroticism, Intimate Gaze, Chiaroscuro。
+Subject (人物塑造):
+核心原则 (Core Principle): 侧重描写 18-22岁 的女性在私密或半公开空间中的自我展示与肢体表达。强调其身体线条的青春感、肌肤的紧致光泽，以及一种介于自在探索与刻意表演之间的状态。画面暗示了“观看者”的存在（如镜头/观众），但无需实体人物。
+主角 (唯一焦点 - Female): 年龄在 18-22岁 之间的年轻女性，气质清新、慵懒或略带叛逆。
+角色类型: 可以是艺术院校学生、兼职酒吧歌手、网红博主、健身爱好者、书店打工妹、旅行者等具有年轻特质的身份。
+姿态与动作 (Pose & Action): 带有青春气息的、自然又具表演性的肢体语言。
+自我沉浸: 独自在房间地毯上对着落地镜伸展身体，目光与镜中的自己/镜头交汇；蜷在沙发角落，手指无意识地绕着发梢，眼神放空却带着笑意；刚洗完澡，裹着浴巾在窗边吹风，湿发贴在颈侧。
+暗示性展示: 穿着宽松衬衫跪坐在床上，衬衫下摆散开，露出大腿根；背对镜头整理内衣肩带，通过镜面反射看到她的侧脸；用脚尖勾起掉落在地上的睡衣，身体形成一道优美的弧线。
+暴露与暗示 (Exposure & Implication): 重点描写符合该年龄段的、青春感的局部特写与若隐若现：如紧致的小腹（Exposed Midriff）、纤细的锁骨与肩颈线条（Exposed Collarbones & Neck）、修长的大腿（Exposed Thighs），以及内衣边缘、胸部轮廓或腰臀曲线。例如：侧躺时T恤卷起露出的腰窝；弯腰时垂落的领口内的阴影；短裤边缘与大腿肌肤的挤压感。
+神态与微表情 (Micro-expressions): 表情必须细腻，混合着独处的放松、自我欣赏的专注，或是对着镜头/想象对象的微妙挑逗。
+具体描写: 眼神迷离地望向镜头外某处，仿佛在与某人对视；嘴角噙着一丝若有若无的笑；轻咬下唇像在思考或忍耐；脸颊自然的红晕（运动后或沐浴后）；舌尖快速舔过嘴唇的细微动作。
+（可选）隐含的观看者 (Implied Viewer): 男性不再作为必须出现的视觉实体。他的存在可以通过以下方式暗示，但无需直接描写：
+环境线索: 沙发上多余的靠垫、桌上两只杯子、镜中反射的房门（暗示可能有人进来）、手机屏幕亮着的聊天界面。
+女性的姿态与视线: 她的目光明确投向画面外（打破第四面墙），姿态带有展示性，仿佛知道正在被观看。
+重点：即使暗示了观看者，画面视觉焦点也完全在女性一人身上。
+Fashion & Styling (服饰与道具):
+服饰 (Youthful Modern Wear): 重点展示符合18-22岁年龄段的私密或休闲穿搭。
+典型单品: 短款露脐T恤（Crop top）、 oversized男友衬衫（内搭蕾丝内衣或真空）、运动内衣/短背心、高腰热裤/骑行裤、丝质吊带睡裙、过膝袜、毛绒拖鞋或赤足。
+材质与状态: 棉质、丝绒、蕾丝、透肤薄纱。穿戴状态随意而性感：衣领滑落至手臂、衬衫只扣最下面一颗、裤腰微微下拉、袜子褪到脚踝、内衣肩带滑落。
+发型与妆容 (Hair & Makeup): 必须体现青春感与自然感。
+发型: 慵懒的微卷长发、湿发贴颈、松散的高丸子头、鬓角碎发被汗水粘在皮肤上。
+妆容: 清透的伪素颜妆（强调皮肤光泽与红润）、淡色腮红、水光唇釉，或演出后未卸的轻微晕染眼妆。
+Props & Clutter (环境细节): 必须包含丰富的、符合年轻人独处场景的私密细节。
+典型场景: 个人卧室/公寓、自习室深夜空镜、酒店房间、浴室、练舞房/健身房角落、夏日午后阳台、车内驾驶座。
+氛围道具: 喝了一半的饮料瓶、亮着屏保的手机、翻开的书本、香水瓶、散落的衣物、霓虹灯管、蓝牙音箱、窗外的城市夜景。
+Lighting & Atmosphere (光影与氛围):
+明暗对比 (Chiaroscuro): 运用私密空间的光源，如台灯、屏幕光、霓虹灯、日落余晖。强烈光影突出身体曲线的轮廓。
+氛围: 必须强调 私密、沉浸式的现代青春都市背景**。氛围是安静、暧昧、充满自我意识的，带着独处的慵懒或夜间思绪的流动。
+**光效细节: 台灯暖光从侧面照亮她一半的身体，另一半陷入深邃阴影；霓虹灯牌的色彩光斑投射在皮肤和墙壁上；手机屏幕光在昏暗房间中映亮她的下巴与锁骨；百叶窗条纹光影切割她的身体。
+Reference Samples (风格参考):
+参考1: 深夜，大学宿舍床上。20岁的女生只穿一件宽大的白色篮球背心和内裤，背靠墙壁屈膝坐着，一条腿伸直，另一条腿曲起，脚踝搭在伸直腿的膝盖上。她手里拿着手机，屏幕光映亮她专注的侧脸和颈项，眼神却并未看屏幕，而是望向斜下方的虚空，嘴角带着一丝玩味的笑。床单凌乱，散落着零食包装和耳机线。
+参考2: 傍晚，空旷的练舞房。21岁的女孩刚结束练习，穿着被汗水浸湿的灰色运动内衣和黑色骑行裤，面对一整面墙镜坐在地板上。她身体后仰，双手撑地，仰头闭眼喘息，脖颈线条绷紧，胸口剧烈起伏。镜子映出她完整的、毫无防备的背影和侧脸，夕阳透过高窗将她染成金色。
+参考3: 酒店浴室，雾气氤氲。19岁的女孩裹着一条白色浴巾，湿发披散，赤足站在洗手台前。她一手撑着台面，身体微微前倾，靠近镜子，指尖正轻轻抹去镜面上的水汽，露出自己泛红的脸颊和迷蒙的眼睛。浴巾松垮，胸口沟壑若隐若现。镜中反射出她身后的淋浴间和朦胧的灯光。
+
 Act as a world-class AI art director and photographer. Create a prompt for an ultra-realistic, viral Instagram photo.
 
 **Target Subject:** 
@@ -189,32 +226,51 @@ Key features: Flawless but realistic skin texture (visible pores, faint vellus h
 """
 
 # === Step 1: 用 g4f GPT-4o 生成高品質繪圖 prompt ===
-client = Client_g4f()
-try:
-  response = client.chat.completions.create(
-      model="gemma-3-27b-it",
-      messages=[
-          {
-              "role": "user",
-             "content": (
-                  prompt_template
-              )
-          }
-      ]
-  )
-except:
-  response = client.chat.completions.create(
-      model="gemini-2.5-flash-lite",
-      messages=[
-          {
-              "role": "user",
-             "content": (
-                  prompt_template
-              )
-          }
-      ]
-  )
-right_prompt = response.choices[0].message.content.strip()
+# client = Client_g4f()
+# try:
+#   response = client.chat.completions.create(
+#       model="gemma-3-27b-it",
+#       messages=[
+#           {
+#               "role": "user",
+#              "content": (
+#                   prompt_template
+#               )
+#           }
+#       ]
+#   )
+# except:
+#   response = client.chat.completions.create(
+#       model="gemini-2.5-flash-lite",
+#       messages=[
+#           {
+#               "role": "user",
+#              "content": (
+#                   prompt_template
+#               )
+#           }
+#       ]
+#   )
+
+from openai import OpenAI
+NV_KEY = os.getenv("NV_KEY")
+
+client_openai = OpenAI(
+  base_url = "https://integrate.api.nvidia.com/v1",
+  api_key = NV_KEY
+)
+
+completion = client_openai.chat.completions.create(
+  model="z-ai/glm4.7",
+  messages=[{"role":"user","content":prompt_template}],
+  temperature=1,
+  top_p=1,
+  max_tokens=16384,
+  extra_body={"chat_template_kwargs":{"enable_thinking":False,"clear_thinking":False}},
+  stream=False
+)
+
+right_prompt = completion.choices[0].message.content.strip()
 image_prompt = right_prompt + """8k photo, Large breasts, deep cleavage, ample cleavage, sexy photo, beautilful girl without makeup"""
 if 'sorry' in image_prompt or 'The model does not exist' in image_prompt:
 	image_prompt = str(chosen)
