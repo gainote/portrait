@@ -1,3 +1,3 @@
-g4f
+openai
 gradio_client
 Pillow
