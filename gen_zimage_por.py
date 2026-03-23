@@ -163,7 +163,6 @@ def get_random_elements():
         "locations": random.choice(categories["locations"]),
         "moods": random.choice(categories["moods"]),
         "color_grades": random.choice(categories["color_grades"]),
-        "props": random.choice(categories["props"]),
     }
 
 chosen = get_random_elements()
@@ -223,7 +222,6 @@ Key features: Flawless but realistic skin texture (visible pores, faint vellus h
 - **locations:** {chosen['locations']}
 - **moods:** {chosen['moods']}
 - **color_grades:** {chosen['color_grades']}
-- **props:** {chosen['props']}
 
 **Detailed Instructions:**
 1. **Opening:** Start with "A raw, ultra-realistic 8k photograph of..."
