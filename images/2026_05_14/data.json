@@ -54,6 +54,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-05-14T21:29:26.941123Z"
+    },
+    {
+      "filename": "images/2026_05_14/2026_05_14_07.webp",
+      "thumb_path": "images/2026_05_14/2026_05_14_07_thumb.webp",
+      "prompt": "{'theme': '\u525b\u6d17\u5b8c\u6fa1\u7684\u6fd5\u9aee\u611f (Wet Hair After Shower)', 'light': 'Monitor screen glow (\u87a2\u5e55\u85cd\u5149\u6620\u7167)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Shy smile while looking down (\u5bb3\u7f9e\u4f4e\u982d\u5fae\u7b11)', 'outfits': '\u6cd5\u5f0f\u788e\u82b1\u88d9 (French Floral Sundress)', 'locations': '\u96fb\u68af\u5167\u81ea\u62cd (Inside elevator)', 'moods': 'Ethereal and angelic (\u7a7a\u9748\u5929\u4f7f\u611f)', 'color_grades': 'Pastel soft colors (\u7c89\u5f69\u5c0f\u6e05\u65b0\u8272\u8abf)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-05-14T22:36:59.909863Z"
     }
   ]
 }
