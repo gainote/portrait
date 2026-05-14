@@ -310,19 +310,62 @@
         const item=document.createElement('div'); item.className='grid-item';
         const card=document.createElement('div'); card.className='card shadow-sm';
         const ph=document.createElement('div'); ph.className='image-placeholder'; card.appendChild(ph);
-        const img=document.createElement('img'); img.src=imgObj.thumb_path; img.className='card-img-top img-fluid'; img.loading='lazy'; img.alt=imgObj.alt||'AI 女神肖像'; img.style.display='none';
-        img.onload=function(){ph.remove(); this.style.display='block'; this.classList.add('loaded'); if(masonryInstance) masonryInstance.layout();}
-        img.onerror=function(){ph.remove(); item.remove();}
+        const img=document.createElement('img'); 
+        img.src=imgObj.thumb_path; 
+        img.className='card-img-top img-fluid'; 
+        img.loading='lazy'; 
+        img.alt=imgObj.alt||'AI 女神肖像'; 
+        img.style.display='none'; // 初始為隱藏
 
-        img.addEventListener('click',()=>{modalImage.src=imgObj.filename; modalImage.style.transform='scale(1)'; modalImage.classList.remove('zoomed'); updateModalInfo(imgObj); imageModal.classList.add('show');});
+        // 重要的偵錯日誌
+        console.log(`Creating image element for: ${img.src}`); 
 
-        card.appendChild(img); item.appendChild(card); newEls.push(item);
+        img.onload=function(){
+            console.log(`Image ONLOAD triggered for: ${this.src}`);
+            ph.remove(); // 移除佔位符
+            this.style.display='block'; // 顯示圖片
+            this.classList.add('loaded'); // 添加 loaded 類別
+            if(masonryInstance) {
+                masonryInstance.layout();
+                console.log(`Masonry layout triggered after loading: ${this.src}`);
+            } else {
+                console.log(`Masonry instance not ready for: ${this.src}`);
+            }
+        }
+        img.onerror=function(){
+            console.error(`Image ONERROR triggered for: ${this.src} - removing item.`);
+            ph.remove(); 
+            item.remove(); // 圖片載入失敗，移除整個項目
+        }
+
+        img.addEventListener('click',()=>{
+            modalImage.src=imgObj.filename; 
+            modalImage.style.transform='scale(1)'; 
+            modalImage.classList.remove('zoomed'); 
+            updateModalInfo(imgObj); 
+            imageModal.classList.add('show');
+        });
+
+        card.appendChild(img); 
+        item.appendChild(card); 
+        newEls.push(item);
       });
 
       newEls.forEach(el=>gallery.appendChild(el));
-      if(!masonryInstance) initMasonry(); else masonryInstance.appended(newEls);
-      imagesLoaded(newEls,()=>{if(masonryInstance) masonryInstance.layout(); loading=false;});
-    }
+      if(!masonryInstance) {
+          initMasonry(); 
+          console.log("Masonry initialized for the first time.");
+      } else {
+          masonryInstance.appended(newEls);
+          console.log("Masonry appended new elements.");
+      }
+      // imagesLoaded 確保所有圖片載入後再重新佈局
+      imagesLoaded(newEls,()=>{
+          console.log("All new images in batch (or their errors) processed by imagesLoaded.");
+          if(masonryInstance) masonryInstance.layout(); 
+          loading=false;
+      });
+}
 
     function updateModalInfo(imgObj){
       const infoFilename=document.getElementById('infoFilename');
