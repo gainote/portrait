@@ -257,16 +257,47 @@
     function initMasonry(){if(!masonryInstance){masonryInstance=new Masonry(gallery,{itemSelector:'.grid-item', columnWidth:'.grid-sizer', gutter:15, percentPosition:true});}}
 
     function loadImageJson(dateStr, retryCount=0){
-      if(hasReachedEnd) return; if(loadedDates.has(dateStr)){loadPreviousDate(); return;}
-      if(retryCount>=30){showEndMessage(); loading=false; return;}
-      showLoading(); const jsonUrl=`images/${dateStr}/data.json`;
-      fetch(jsonUrl).then(res=>{if(!res.ok) throw new Error(`HTTP ${res.status}`); return res.json();})
-      .then(data=>{
-        if(!data.images || data.images.length===0){currentDate.setDate(currentDate.getDate()-1); const newDateStr=formatDate(currentDate); setTimeout(()=>loadImageJson(newDateStr, retryCount+1), 100); return;}
-        loadedDates.add(dateStr); renderImages(data.images); setTimeout(()=>loadPreviousDate(), 200);
+      if(hasReachedEnd) return; 
+      if(loadedDates.has(dateStr)){ // 如果這一天已經載入過，嘗試載入前一天
+        currentDate.setDate(currentDate.getDate()-1); 
+        const newDateStr=formatDate(currentDate); 
+        setTimeout(()=>loadImageJson(newDateStr, retryCount+1), 100); 
+        return;
+      }
+      
+      if(retryCount>=30){ // 如果已經重試了30次，顯示結束訊息
+        showEndMessage(); 
+        loading=false; 
+        return;
+      }
+      showLoading(); 
+      const jsonUrl=`images/${dateStr}/data.json`;
+      fetch(jsonUrl).then(res=>{
+        if(!res.ok) throw new Error(`HTTP ${res.status}`); 
+        return res.json();
       })
-      .catch(()=>{currentDate.setDate(currentDate.getDate()-1); const newDateStr=formatDate(currentDate); setTimeout(()=>loadImageJson(newDateStr, retryCount+1), 100);})
-      .finally(()=>{if(retryCount===0){setTimeout(hideLoading, 500);}});
+      .then(data=>{
+        if(!data.images || data.images.length===0){ // 如果數據為空或沒有圖片，嘗試前一天
+          currentDate.setDate(currentDate.getDate()-1); 
+          const newDateStr=formatDate(currentDate); 
+          setTimeout(()=>loadImageJson(newDateStr, retryCount+1), 100); 
+          return;
+        }
+        loadedDates.add(dateStr); 
+        renderImages(data.images); 
+        // 成功載入後，可以重置retryCount，並準備載入前一天
+        setTimeout(()=>loadPreviousDate(), 200);
+      })
+      .catch(()=>{ // 抓取失敗，嘗試前一天
+        currentDate.setDate(currentDate.getDate()-1); 
+        const newDateStr=formatDate(currentDate); 
+        setTimeout(()=>loadImageJson(newDateStr, retryCount+1), 100);
+      })
+      .finally(()=>{
+        if(retryCount===0){ // 只有在第一次嘗試時才延遲隱藏 loading 訊息
+            setTimeout(hideLoading, 500);
+        }
+      });
     }
 
     function renderImages(images){
