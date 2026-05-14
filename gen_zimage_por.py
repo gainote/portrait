@@ -297,16 +297,27 @@ width = size_choice["width"]
 height = size_choice["height"]
 
 # === Step 3: 調用 Z-Image-Turbo 模型產圖 ===
-client = Client_gradio("victor/Z-Image-Turbo-MCP")
+client = Client_gradio("mrfakename/Z-Image-Turbo")
+# result = client.predict(
+#     prompt=image_prompt,
+#     resolution='864x1152 ( 3:4 )',
+#     seed=42,
+#     steps=12,
+#     shift=3,
+#     random_seed=True,
+#     api_name="/generate_image"
+# )
+
 result = client.predict(
-    prompt=image_prompt,
-    resolution='864x1152 ( 3:4 )',
-    seed=42,
-    steps=12,
-    shift=3,
-    random_seed=True,
-    api_name="/generate_image"
+	prompt="A raw, ultra‑realistic 8k photograph of a stunning Japanese idol‑style model, 21 years old, with flawless but naturalistic skin (visible pores, faint vellus hair), large expressive brown eyes, a cute yet seductive smile, and straight silky dark hair cascading over her shoulders. She stands in the middle of a sun‑dappled flower field, surrounded by a sea of pastel blooms, wearing a fitted Chanel‑inspired tweed jacket and short skirt, the fabric’s intricate weave catching the soft light; the jacket is partially unbuttoned, revealing a sheer white blouse with delicate lace trim that accentuates her slim waist and ample bust. She playfully sticks out her tongue, eyes sparkling with whimsical magic, as if teasing the viewer. The shot is taken at eye‑level with a Sony A7R IV and an 85 mm f/1.4 GM lens, using shallow depth of field for creamy bokeh, high‑contrast, razor‑sharp illumination, and vibrant color grading.8k photo, Large breasts",
+	height=864,
+	width=1152,
+	num_inference_steps=12,
+	seed=42,
+	randomize_seed=True,
+	api_name="/generate_image"
 )
+
 
 # === Step 4: 建立日期資料夾與檔名 ===
 today = datetime.now().strftime("%Y_%m_%d")
