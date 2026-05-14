@@ -272,7 +272,7 @@ client_openai = OpenAI(
 )
 
 completion = client_openai.chat.completions.create(
-  model="z-ai/glm4.7",
+  model="z-ai/glm5.1",
   messages=[{"role":"user","content":prompt_template}],
   temperature=1,
   top_p=1,
