@@ -54,6 +54,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-05-15T18:00:53.348219Z"
+    },
+    {
+      "filename": "images/2026_05_15/2026_05_15_07.webp",
+      "thumb_path": "images/2026_05_15/2026_05_15_07_thumb.webp",
+      "prompt": "{'theme': '\u6d77\u908a\u5915\u967d\u6cf3\u88dd (Sunset Beach Swimwear)', 'light': 'Sunset silhouette (\u5915\u967d\u526a\u5f71)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Looking directly into the camera with intense eyes (\u6df1\u60c5\u6ce8\u8996\u93e1\u982d)', 'outfits': '\u65e5\u7cfb\u6b7b\u5eab\u6c34\u6cf3\u88dd (Japanese School Swimsuit)', 'locations': '\u6c99\u7058\u6d77\u5cb8\u7dda (Sandy beach shoreline)', 'moods': 'Romantic and passionate (\u6d6a\u6f2b\u71b1\u60c5)', 'color_grades': 'Cyberpunk neon purple/blue (\u8cfd\u535a\u9f90\u514b\u7d2b\u85cd\u8272\u8abf)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-05-15T19:21:21.790738Z"
     }
   ]
 }
