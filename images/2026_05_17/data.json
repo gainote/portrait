@@ -45,6 +45,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-05-17T11:56:24.951143Z"
+    },
+    {
+      "filename": "images/2026_05_17/2026_05_17_06.webp",
+      "thumb_path": "images/2026_05_17/2026_05_17_06_thumb.webp",
+      "prompt": "{'theme': '\u6ed1\u96ea\u5834\u96ea\u5730\u88dd (Snowy Ski Resort Style)', 'light': 'God rays/Volumetric light (\u8036\u7a4c\u5149/\u9ad4\u7a4d\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Innocent look (\u7121\u8f9c\u773c\u795e)', 'outfits': '\u540a\u5e36\u8932\u5de5\u88dd\u98a8 (Dungarees / Overalls)', 'locations': '\u82b1\u6d77\u4e2d\u592e (Middle of flower field)', 'moods': 'Dangerous and edgy (\u5371\u96aa\u908a\u7de3\u611f)', 'color_grades': 'High contrast and sharp (\u9ad8\u53cd\u5dee\u92b3\u5229\u98a8)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-05-17T14:22:31.719616Z"
     }
   ]
 }
