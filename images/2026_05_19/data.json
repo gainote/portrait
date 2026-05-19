@@ -27,6 +27,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-05-19T11:56:19.725455Z"
+    },
+    {
+      "filename": "images/2026_05_19/2026_05_19_04.webp",
+      "thumb_path": "images/2026_05_19/2026_05_19_04_thumb.webp",
+      "prompt": "{'theme': '\u65e5\u7cfb\u9ad8\u6821\u751f (Japanese High School Student)', 'light': 'Cinematic studio lighting (\u96fb\u5f71\u7d1a\u651d\u5f71\u68da\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Playful wink (\u4fcf\u76ae\u7728\u773c)', 'outfits': '\u683c\u5b50\u896f\u886b\u7d81\u8170\u9593 (Plaid Shirt Around Waist)', 'locations': '\u96fb\u68af\u5167\u81ea\u62cd (Inside elevator)', 'moods': 'Dreamy and soft (\u5922\u5e7b\u67d4\u7126\u98a8)', 'color_grades': 'Teal and Orange cinematic (\u9752\u6a59\u96fb\u5f71\u8272\u8abf)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-05-19T19:26:05.411837Z"
     }
   ]
 }
