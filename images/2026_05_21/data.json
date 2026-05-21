@@ -36,6 +36,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-05-21T16:35:31.781142Z"
+    },
+    {
+      "filename": "images/2026_05_21/2026_05_21_05.webp",
+      "thumb_path": "images/2026_05_21/2026_05_21_05_thumb.webp",
+      "prompt": "{'theme': '\u7a7a\u670d\u54e1\u5236\u670d\u7167 (Flight Attendant Uniform)', 'light': 'Under-lighting horror style (\u5e95\u5149/\u6050\u6016\u98a8\u683c)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Finger near lips (\u624b\u6307\u8f15\u89f8\u5634\u5507)', 'outfits': '\u9ad8\u9818\u7dca\u8eab\u6bdb\u8863 (Tight Turtleneck)', 'locations': '\u90fd\u5e02\u8857\u982d\u6591\u99ac\u7dda (City crosswalk streetshot)', 'moods': 'Chaotic energy (\u6df7\u4e82\u80fd\u91cf)', 'color_grades': 'Underexposed low key (\u6b20\u66dd\u4f4e\u8abf\u98a8\u683c)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-05-21T18:27:57.068095Z"
     }
   ]
 }
