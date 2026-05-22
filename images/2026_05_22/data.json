@@ -45,6 +45,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-05-22T20:13:22.344876Z"
+    },
+    {
+      "filename": "images/2026_05_22/2026_05_22_06.webp",
+      "thumb_path": "images/2026_05_22/2026_05_22_06_thumb.webp",
+      "prompt": "{'theme': '\u5496\u5561\u5ef3\u7db2\u7f8e\u6253\u5361\u7167 (Trendy Caf\u00e9 Influencer Shot)', 'light': 'Soft window light (\u67d4\u548c\u7a97\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Seductive smile (\u8a98\u60d1\u5fae\u7b11)', 'outfits': '\u65e5\u7cfb\u6b7b\u5eab\u6c34\u6cf3\u88dd (Japanese School Swimsuit)', 'locations': '\u7a3b\u7530\u4e2d\u592e (Rice paddy field)', 'moods': 'Whimsical and magical (\u7570\u60f3\u5929\u958b\u9b54\u6cd5\u611f)', 'color_grades': 'Underexposed low key (\u6b20\u66dd\u4f4e\u8abf\u98a8\u683c)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-05-22T22:35:17.263996Z"
     }
   ]
 }
