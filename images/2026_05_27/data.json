@@ -1,0 +1,14 @@
+{
+  "date": "2026_05_27",
+  "images": [
+    {
+      "filename": "images/2026_05_27/2026_05_27_01.webp",
+      "thumb_path": "images/2026_05_27/2026_05_27_01_thumb.webp",
+      "prompt": "{'theme': '\u5922\u5e7b\u4ed9\u5973\u68ee\u6797 (Fairy Tale Forest)', 'light': 'Cinematic studio lighting (\u96fb\u5f71\u7d1a\u651d\u5f71\u68da\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Innocent look (\u7121\u8f9c\u773c\u795e)', 'outfits': '\u7d72\u8cea\u7d30\u80a9\u5e36\u6d0b\u88dd (Silk Slip Dress)', 'locations': '\u51cc\u4e82\u7684\u5e8a\u92ea (Messy bed)', 'moods': 'Fresh and innocent (\u6e05\u65b0\u7d14\u771f\u611f)', 'color_grades': 'Desaturated muted tones (\u4f4e\u98fd\u548c\u6027\u51b7\u6de1\u98a8)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-05-27T01:36:24.208998Z"
+    }
+  ]
+}
