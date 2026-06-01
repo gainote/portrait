@@ -18,6 +18,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-06-01T06:56:14.374285Z"
+    },
+    {
+      "filename": "images/2026_06_01/2026_06_01_03.webp",
+      "thumb_path": "images/2026_06_01/2026_06_01_03_thumb.webp",
+      "prompt": "{'theme': '\u65e5\u5f0f\u548c\u670d\u6afb\u82b1\u5b63 (Kimono at Cherry Blossom Season)', 'light': 'Under-lighting horror style (\u5e95\u5149/\u6050\u6016\u98a8\u683c)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Looking directly into the camera with intense eyes (\u6df1\u60c5\u6ce8\u8996\u93e1\u982d)', 'outfits': '\u9732\u809a\u81cd\u77ed\u7248\u4e0a\u8863 (Crop Top showing Midriff)', 'locations': '\u5730\u9435\u7ad9\u624b\u6276\u68af (Subway escalator)', 'moods': 'Cozy and intimate (\u6eab\u99a8\u89aa\u5bc6\u611f)', 'color_grades': 'Fujifilm simulation (\u5bcc\u58eb\u8edf\u7247\u6a21\u64ec)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-06-01T18:24:12.027885Z"
     }
   ]
 }
