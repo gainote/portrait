@@ -1,0 +1,14 @@
+{
+  "date": "2026_06_06",
+  "images": [
+    {
+      "filename": "images/2026_06_06/2026_06_06_01.webp",
+      "thumb_path": "images/2026_06_06/2026_06_06_01_thumb.webp",
+      "prompt": "{'theme': 'OL\u4e0a\u73ed\u5de5\u4f5c\u7167 (Office Lady Style)', 'light': 'Sunset silhouette (\u5915\u967d\u526a\u5f71)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Playful wink (\u4fcf\u76ae\u7728\u773c)', 'outfits': '\u7d72\u8cea\u7d30\u80a9\u5e36\u6d0b\u88dd (Silk Slip Dress)', 'locations': '\u5730\u9435\u8eca\u5ec2\u5167 (Inside subway train)', 'moods': 'Avant-garde artistic (\u524d\u885b\u85dd\u8853\u611f)', 'color_grades': 'Cyberpunk neon purple/blue (\u8cfd\u535a\u9f90\u514b\u7d2b\u85cd\u8272\u8abf)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-06-06T19:03:29.810336Z"
+    }
+  ]
+}
