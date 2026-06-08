@@ -27,6 +27,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-06-08T22:56:19.765844Z"
+    },
+    {
+      "filename": "images/2026_06_08/2026_06_08_04.webp",
+      "thumb_path": "images/2026_06_08/2026_06_08_04_thumb.webp",
+      "prompt": "{'theme': '\u5eda\u623f\u505a\u751c\u9ede (Baking in the Kitchen)', 'light': 'Split lighting (\u5074\u5149/\u9670\u967d\u81c9)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Shy smile while looking down (\u5bb3\u7f9e\u4f4e\u982d\u5fae\u7b11)', 'outfits': '\u91dd\u7e54\u6bdb\u8863\u914d\u77ed\u88d9 (Knit Sweater & Skirt)', 'locations': '\u5ee2\u68c4\u5de5\u5ee0 (Abandoned factory)', 'moods': 'Elegant and sophisticated (\u512a\u96c5\u4e16\u6545)', 'color_grades': 'Monochrome red (\u55ae\u8272\u7d05\u8abf)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-06-08T23:58:38.838793Z"
     }
   ]
 }
