@@ -9,6 +9,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-06-08T17:03:21.529489Z"
+    },
+    {
+      "filename": "images/2026_06_08/2026_06_08_02.webp",
+      "thumb_path": "images/2026_06_08/2026_06_08_02_thumb.webp",
+      "prompt": "{'theme': '\u84b8\u6c7d\u9f90\u514b\u98a8\u683c (Steampunk Aesthetic)', 'light': 'Under-lighting horror style (\u5e95\u5149/\u6050\u6016\u98a8\u683c)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Laughing naturally (\u81ea\u7136\u5927\u7b11\u77ac\u9593)', 'outfits': '\u540a\u5e36\u8932\u5de5\u88dd\u98a8 (Dungarees / Overalls)', 'locations': '\u5496\u5561\u5ef3\u7a97\u908a\u5ea7\u4f4d (Window seat at a caf\u00e9)', 'moods': 'Minimalist clean aesthetic (\u6975\u7c21\u6e05\u723d\u611f)', 'color_grades': 'Overexposed high key (\u904e\u66dd\u9ad8\u8abf\u98a8\u683c)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-06-08T19:24:40.214707Z"
     }
   ]
 }
