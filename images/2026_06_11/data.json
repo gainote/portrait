@@ -36,6 +36,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-06-11T15:29:09.205639Z"
+    },
+    {
+      "filename": "images/2026_06_11/2026_06_11_05.webp",
+      "thumb_path": "images/2026_06_11/2026_06_11_05_thumb.webp",
+      "prompt": "{'theme': '\u65e5\u7cfb\u9ad8\u6821\u751f (Japanese High School Student)', 'light': 'Cyberpunk dual tone (\u8cfd\u535a\u9f90\u514b\u96d9\u8272\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Biting lip slightly (\u8f15\u54ac\u5634\u5507)', 'outfits': '\u65e5\u7cfb\u6b7b\u5eab\u6c34\u6cf3\u88dd (Japanese School Swimsuit)', 'locations': '\u5496\u5561\u5ef3\u7a97\u908a\u5ea7\u4f4d (Window seat at a caf\u00e9)', 'moods': 'Cool and independent (\u9177\u5e25\u7368\u7acb\u611f)', 'color_grades': 'Kodak Portra 400 style (\u67ef\u9054Portra\u5e95\u7247\u98a8)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-06-11T18:32:19.165912Z"
     }
   ]
 }
