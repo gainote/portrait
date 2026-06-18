@@ -2,4 +2,4 @@
 
 
 
-<img src="2026_06_18_01.webp" width="100"/>
+<img src="2026_06_18_01.webp" width="100"/> <img src="2026_06_18_02.webp" width="100"/>
