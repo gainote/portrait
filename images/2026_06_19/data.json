@@ -1,0 +1,14 @@
+{
+  "date": "2026_06_19",
+  "images": [
+    {
+      "filename": "images/2026_06_19/2026_06_19_01.webp",
+      "thumb_path": "images/2026_06_19/2026_06_19_01_thumb.webp",
+      "prompt": "{'theme': '\u65e5\u7cfb\u9ad8\u6821\u751f (Japanese High School Student)', 'light': 'Cinematic studio lighting (\u96fb\u5f71\u7d1a\u651d\u5f71\u68da\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Biting lip slightly (\u8f15\u54ac\u5634\u5507)', 'outfits': '\u904b\u52d5\u5167\u8863\u8207\u745c\u4f3d\u8932 (Sports Bra & Yoga Pants)', 'locations': '\u5c4b\u9802\u505c\u8eca\u5834 (Rooftop parking lot)', 'moods': 'Dangerous and edgy (\u5371\u96aa\u908a\u7de3\u611f)', 'color_grades': 'Monochrome red (\u55ae\u8272\u7d05\u8abf)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-06-19T07:26:10.190681Z"
+    }
+  ]
+}
