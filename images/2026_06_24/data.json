@@ -45,6 +45,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-06-24T16:04:56.561110Z"
+    },
+    {
+      "filename": "images/2026_06_24/2026_06_24_06.webp",
+      "thumb_path": "images/2026_06_24/2026_06_24_06_thumb.webp",
+      "prompt": "{'theme': '\u57ce\u5e02\u591c\u666f\u9713\u8679\u98a8 (Neon City Night Portrait)', 'light': 'Monitor screen glow (\u87a2\u5e55\u85cd\u5149\u6620\u7167)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Tongue out playfully (\u4fcf\u76ae\u5410\u820c)', 'outfits': '\u5bec\u9b06\u7537\u53cb\u896f\u886b (Oversized Boyfriend Shirt)', 'locations': '\u9713\u8679\u71c8\u62db\u724c\u4e0b (Under neon signs)', 'moods': 'Cozy and intimate (\u6eab\u99a8\u89aa\u5bc6\u611f)', 'color_grades': 'Dark moody green (\u6697\u8abf\u58a8\u7da0\u98a8\u683c)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-06-24T17:53:40.410831Z"
     }
   ]
 }
