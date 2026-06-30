@@ -27,6 +27,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-06-30T11:40:35.101157Z"
+    },
+    {
+      "filename": "images/2026_06_30/2026_06_30_04.webp",
+      "thumb_path": "images/2026_06_30/2026_06_30_04_thumb.webp",
+      "prompt": "{'theme': '\u6f22\u670d/\u53e4\u88dd\u5beb\u771f (Traditional Hanfu/Costume)', 'light': 'Rembrandt lighting (\u502b\u52c3\u6717\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Gentle soft smile (\u6eab\u67d4\u5fae\u7b11)', 'outfits': '\u97d3\u7cfb\u5b78\u9662\u98a8\u7a7f\u642d (Korean Preppy Style)', 'locations': '\u71b1\u5e36\u96e8\u6797\u7011\u5e03 (Tropical waterfall)', 'moods': 'Chic and fashionable (\u6642\u5c1a\u9ad8\u7d1a\u611f)', 'color_grades': 'Cyberpunk neon purple/blue (\u8cfd\u535a\u9f90\u514b\u7d2b\u85cd\u8272\u8abf)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-06-30T13:32:25.813291Z"
     }
   ]
 }
