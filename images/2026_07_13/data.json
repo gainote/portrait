@@ -9,6 +9,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-13T15:35:09.366191Z"
+    },
+    {
+      "filename": "images/2026_07_13/2026_07_13_02.webp",
+      "thumb_path": "images/2026_07_13/2026_07_13_02_thumb.webp",
+      "prompt": "{'theme': '\u6ed1\u96ea\u5834\u96ea\u5730\u88dd (Snowy Ski Resort Style)', 'light': 'Disco ball reflection (\u8fea\u65af\u53ef\u7403\u53cd\u5c04\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Tongue out playfully (\u4fcf\u76ae\u5410\u820c)', 'outfits': '\u9732\u809a\u81cd\u77ed\u7248\u4e0a\u8863 (Crop Top showing Midriff)', 'locations': '\u904a\u8247\u7532\u677f (Yacht deck)', 'moods': 'Adventurous spirit (\u5192\u96aa\u7cbe\u795e)', 'color_grades': 'Cyberpunk neon purple/blue (\u8cfd\u535a\u9f90\u514b\u7d2b\u85cd\u8272\u8abf)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-13T17:29:40.094582Z"
     }
   ]
 }
