@@ -45,6 +45,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-13T22:10:30.214910Z"
+    },
+    {
+      "filename": "images/2026_07_13/2026_07_13_06.webp",
+      "thumb_path": "images/2026_07_13/2026_07_13_06_thumb.webp",
+      "prompt": "{'theme': '\u525b\u6d17\u5b8c\u6fa1\u7684\u6fd5\u9aee\u611f (Wet Hair After Shower)', 'light': 'Monitor screen glow (\u87a2\u5e55\u85cd\u5149\u6620\u7167)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Tongue out playfully (\u4fcf\u76ae\u5410\u820c)', 'outfits': 'oversized \u885b\u8863\u642d\u914d\u71b1\u8932 (Oversized Hoodie with Shorts)', 'locations': '\u9ad8\u7d1a\u98ef\u5e97\u623f\u9593 (Luxury hotel room)', 'moods': 'Playful and cute (\u4fcf\u76ae\u53ef\u611b\u6c1b\u570d)', 'color_grades': 'Sepia vintage tone (\u8910\u8272\u5fa9\u53e4\u8272\u8abf)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-13T23:12:28.170117Z"
     }
   ]
 }
