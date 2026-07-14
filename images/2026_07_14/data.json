@@ -45,6 +45,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-14T09:33:57.774495Z"
+    },
+    {
+      "filename": "images/2026_07_14/2026_07_14_06.webp",
+      "thumb_path": "images/2026_07_14/2026_07_14_06_thumb.webp",
+      "prompt": "{'theme': '\u7a7a\u670d\u54e1\u5236\u670d\u7167 (Flight Attendant Uniform)', 'light': 'Fireplace warm light (\u58c1\u7210\u706b\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Gentle soft smile (\u6eab\u67d4\u5fae\u7b11)', 'outfits': '\u904b\u52d5\u5167\u8863\u8207\u745c\u4f3d\u8932 (Sports Bra & Yoga Pants)', 'locations': '\u843d\u5730\u7a97\u65c1\u6c99\u767c (By the big window on a sofa)', 'moods': 'Mystery and allure (\u795e\u79d8\u9b45\u60d1\u6c1b\u570d)', 'color_grades': 'Overexposed high key (\u904e\u66dd\u9ad8\u8abf\u98a8\u683c)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-14T11:08:57.029643Z"
     }
   ]
 }
