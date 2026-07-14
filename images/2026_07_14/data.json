@@ -63,6 +63,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-14T12:26:10.985100Z"
+    },
+    {
+      "filename": "images/2026_07_14/2026_07_14_08.webp",
+      "thumb_path": "images/2026_07_14/2026_07_14_08_thumb.webp",
+      "prompt": "{'theme': '\u5eda\u623f\u505a\u751c\u9ede (Baking in the Kitchen)', 'light': 'Monitor screen glow (\u87a2\u5e55\u85cd\u5149\u6620\u7167)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Gentle soft smile (\u6eab\u67d4\u5fae\u7b11)', 'outfits': '\u540a\u5e36\u8932\u5de5\u88dd\u98a8 (Dungarees / Overalls)', 'locations': '\u5eda\u623f\u6d41\u7406\u53f0 (Kitchen counter)', 'moods': 'Playful and cute (\u4fcf\u76ae\u53ef\u611b\u6c1b\u570d)', 'color_grades': 'Matte finish (\u9727\u9762\u8cea\u611f)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-14T14:24:20.934094Z"
     }
   ]
 }
