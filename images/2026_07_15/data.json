@@ -54,6 +54,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-15T17:10:28.095288Z"
+    },
+    {
+      "filename": "images/2026_07_15/2026_07_15_07.webp",
+      "thumb_path": "images/2026_07_15/2026_07_15_07_thumb.webp",
+      "prompt": "{'theme': '\u512a\u96c5\u82ad\u857e\u821e\u8005 (Elegant Ballet Dancer)', 'light': 'Ring light reflection in eyes (\u74b0\u5f62\u71c8\u773c\u795e\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Gentle soft smile (\u6eab\u67d4\u5fae\u7b11)', 'outfits': '\u9732\u809a\u81cd\u77ed\u7248\u4e0a\u8863 (Crop Top showing Midriff)', 'locations': '\u79cb\u5929\u843d\u8449\u5806 (Pile of autumn leaves)', 'moods': 'Luxury lifestyle (\u9ad8\u7d1a\u751f\u6d3b\u8cea\u611f)', 'color_grades': 'Bleach bypass (\u6f02\u767d\u6548\u679c/\u9ad8\u5c0d\u6bd4\u4f4e\u98fd\u548c)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-15T18:21:43.852752Z"
     }
   ]
 }
