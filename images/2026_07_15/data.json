@@ -72,6 +72,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-15T20:44:38.471179Z"
+    },
+    {
+      "filename": "images/2026_07_15/2026_07_15_09.webp",
+      "thumb_path": "images/2026_07_15/2026_07_15_09_thumb.webp",
+      "prompt": "{'theme': '\u672b\u65e5\u5ee2\u589f\u63a2\u96aa (Post-Apocalyptic Ruins Exploration)', 'light': 'Fireplace warm light (\u58c1\u7210\u706b\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Laughing naturally (\u81ea\u7136\u5927\u7b11\u77ac\u9593)', 'outfits': '\u9732\u80cc\u665a\u79ae\u670d (Backless Evening Gown)', 'locations': '\u82b1\u6d77\u4e2d\u592e (Middle of flower field)', 'moods': 'Mystery and allure (\u795e\u79d8\u9b45\u60d1\u6c1b\u570d)', 'color_grades': 'Monochrome red (\u55ae\u8272\u7d05\u8abf)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-15T21:38:54.271859Z"
     }
   ]
 }
