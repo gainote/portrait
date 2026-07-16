@@ -45,6 +45,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-16T14:24:56.972520Z"
+    },
+    {
+      "filename": "images/2026_07_16/2026_07_16_06.webp",
+      "thumb_path": "images/2026_07_16/2026_07_16_06_thumb.webp",
+      "prompt": "{'theme': '\u65e5\u7cfb\u9ad8\u6821\u751f (Japanese High School Student)', 'light': 'Neon sign lighting (\u9713\u8679\u71c8\u6253\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Laughing naturally (\u81ea\u7136\u5927\u7b11\u77ac\u9593)', 'outfits': '\u5408\u8eab\u897f\u88dd\u5916\u5957\u8207\u925b\u7b46\u88d9 (Blazer & Pencil Skirt)', 'locations': '\u96fb\u8a71\u4ead\u5167 (Inside telephone booth)', 'moods': 'Chic and fashionable (\u6642\u5c1a\u9ad8\u7d1a\u611f)', 'color_grades': 'Warm and golden tones (\u6eab\u6696\u91d1\u9ec3\u8272\u8abf)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-16T15:54:43.554159Z"
     }
   ]
 }
