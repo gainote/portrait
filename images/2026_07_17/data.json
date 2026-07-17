@@ -135,6 +135,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-17T21:32:59.666963Z"
+    },
+    {
+      "filename": "images/2026_07_17/2026_07_17_16.webp",
+      "thumb_path": "images/2026_07_17/2026_07_17_16_thumb.webp",
+      "prompt": "{'theme': '\u65e5\u7cfb\u9ad8\u6821\u751f (Japanese High School Student)', 'light': 'Cinematic studio lighting (\u96fb\u5f71\u7d1a\u651d\u5f71\u68da\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Innocent look (\u7121\u8f9c\u773c\u795e)', 'outfits': '\u9ad8\u9818\u7dca\u8eab\u6bdb\u8863 (Tight Turtleneck)', 'locations': '\u6cf3\u6c60\u908a\u8eba\u6905 (Poolside sunbed)', 'moods': 'Romantic and passionate (\u6d6a\u6f2b\u71b1\u60c5)', 'color_grades': 'Fujifilm simulation (\u5bcc\u58eb\u8edf\u7247\u6a21\u64ec)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-17T23:09:32.630266Z"
     }
   ]
 }
