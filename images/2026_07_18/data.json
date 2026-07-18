@@ -81,6 +81,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-18T15:14:45.980683Z"
+    },
+    {
+      "filename": "images/2026_07_18/2026_07_18_10.webp",
+      "thumb_path": "images/2026_07_18/2026_07_18_10_thumb.webp",
+      "prompt": "{'theme': '\u5962\u83ef\u904a\u8247\u6d3e\u5c0d (Luxury Yacht Party)', 'light': 'Neon sign lighting (\u9713\u8679\u71c8\u6253\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Biting lip slightly (\u8f15\u54ac\u5634\u5507)', 'outfits': '\u904b\u52d5\u5167\u8863\u8207\u745c\u4f3d\u8932 (Sports Bra & Yoga Pants)', 'locations': '\u904a\u8247\u7532\u677f (Yacht deck)', 'moods': 'Mystery and allure (\u795e\u79d8\u9b45\u60d1\u6c1b\u570d)', 'color_grades': 'Overexposed high key (\u904e\u66dd\u9ad8\u8abf\u98a8\u683c)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-18T17:13:22.761382Z"
     }
   ]
 }
