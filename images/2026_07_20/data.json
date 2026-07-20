@@ -36,6 +36,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-20T10:41:02.497090Z"
+    },
+    {
+      "filename": "images/2026_07_20/2026_07_20_05.webp",
+      "thumb_path": "images/2026_07_20/2026_07_20_05_thumb.webp",
+      "prompt": "{'theme': '\u96fb\u7af6\u5c11\u5973 (Gamer Girl with Headset)', 'light': 'Refrigerator light glow (\u51b0\u7bb1\u958b\u9580\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Gentle soft smile (\u6eab\u67d4\u5fae\u7b11)', 'outfits': '\u91dd\u7e54\u6bdb\u8863\u914d\u77ed\u88d9 (Knit Sweater & Skirt)', 'locations': '\u6cf3\u6c60\u908a\u8eba\u6905 (Poolside sunbed)', 'moods': 'Chic and fashionable (\u6642\u5c1a\u9ad8\u7d1a\u611f)', 'color_grades': 'Overexposed high key (\u904e\u66dd\u9ad8\u8abf\u98a8\u683c)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-20T12:41:30.387162Z"
     }
   ]
 }
