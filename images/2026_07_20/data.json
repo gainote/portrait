@@ -27,6 +27,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-20T07:53:58.492927Z"
+    },
+    {
+      "filename": "images/2026_07_20/2026_07_20_04.webp",
+      "thumb_path": "images/2026_07_20/2026_07_20_04_thumb.webp",
+      "prompt": "{'theme': '\u6d17\u8863\u5e97\u7b49\u5f85\u6642\u5149 (Laundromat Waiting Vibe)', 'light': 'Cinematic studio lighting (\u96fb\u5f71\u7d1a\u651d\u5f71\u68da\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Looking directly into the camera with intense eyes (\u6df1\u60c5\u6ce8\u8996\u93e1\u982d)', 'outfits': '\u7d72\u8cea\u7d30\u80a9\u5e36\u6d0b\u88dd (Silk Slip Dress)', 'locations': '\u6c99\u6f20\u6c99\u4e18 (Desert dunes)', 'moods': 'Zen and peaceful (\u79aa\u610f\u5e73\u975c)', 'color_grades': 'Desaturated muted tones (\u4f4e\u98fd\u548c\u6027\u51b7\u6de1\u98a8)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-20T10:41:02.497090Z"
     }
   ]
 }
