@@ -63,6 +63,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-20T18:29:46.259617Z"
+    },
+    {
+      "filename": "images/2026_07_20/2026_07_20_08.webp",
+      "thumb_path": "images/2026_07_20/2026_07_20_08_thumb.webp",
+      "prompt": "{'theme': '\u98ef\u5e97\u623f\u9593\u6175\u61f6\u65e9\u6668 (Cozy Hotel Morning)', 'light': 'Rembrandt lighting (\u502b\u52c3\u6717\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Laughing naturally (\u81ea\u7136\u5927\u7b11\u77ac\u9593)', 'outfits': '\u5bec\u9b06\u7537\u53cb\u896f\u886b (Oversized Boyfriend Shirt)', 'locations': '\u79cb\u5929\u843d\u8449\u5806 (Pile of autumn leaves)', 'moods': 'Chic and fashionable (\u6642\u5c1a\u9ad8\u7d1a\u611f)', 'color_grades': 'Dark moody green (\u6697\u8abf\u58a8\u7da0\u98a8\u683c)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-20T20:04:38.823706Z"
     }
   ]
 }
