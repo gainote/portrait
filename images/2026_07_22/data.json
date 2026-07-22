@@ -45,6 +45,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-22T17:45:53.444280Z"
+    },
+    {
+      "filename": "images/2026_07_22/2026_07_22_06.webp",
+      "thumb_path": "images/2026_07_22/2026_07_22_06_thumb.webp",
+      "prompt": "{'theme': '\u57ce\u5e02\u591c\u666f\u9713\u8679\u98a8 (Neon City Night Portrait)', 'light': 'Overcast soft sky light (\u9670\u5929\u67d4\u548c\u81ea\u7136\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Laughing naturally (\u81ea\u7136\u5927\u7b11\u77ac\u9593)', 'outfits': '\u683c\u5b50\u896f\u886b\u7d81\u8170\u9593 (Plaid Shirt Around Waist)', 'locations': '\u9713\u8679\u71c8\u62db\u724c\u4e0b (Under neon signs)', 'moods': 'Lazy and sluggish (\u6175\u61f6\u9839\u5ee2\u611f)', 'color_grades': 'Pastel soft colors (\u7c89\u5f69\u5c0f\u6e05\u65b0\u8272\u8abf)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-22T21:01:53.172828Z"
     }
   ]
 }
