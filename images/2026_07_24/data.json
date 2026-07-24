@@ -36,6 +36,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-24T10:45:47.272854Z"
+    },
+    {
+      "filename": "images/2026_07_24/2026_07_24_05.webp",
+      "thumb_path": "images/2026_07_24/2026_07_24_05_thumb.webp",
+      "prompt": "{'theme': '\u5922\u5e7b\u4ed9\u5973\u68ee\u6797 (Fairy Tale Forest)', 'light': 'Flash photography style (\u9583\u5149\u71c8\u76f4\u6253\u98a8\u683c)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Finger near lips (\u624b\u6307\u8f15\u89f8\u5634\u5507)', 'outfits': '\u9999\u5948\u5152\u98a8\u7c97\u82b1\u5462\u5957\u88dd (Tweed Suit)', 'locations': '\u5eda\u623f\u6d41\u7406\u53f0 (Kitchen counter)', 'moods': 'Ethereal and angelic (\u7a7a\u9748\u5929\u4f7f\u611f)', 'color_grades': 'Cyberpunk neon purple/blue (\u8cfd\u535a\u9f90\u514b\u7d2b\u85cd\u8272\u8abf)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-24T12:09:37.807327Z"
     }
   ]
 }
