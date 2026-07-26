@@ -54,6 +54,15 @@
       "height": 1000,
       "style": "portrait",
       "timestamp": "2026-07-26T12:53:52.007599Z"
+    },
+    {
+      "filename": "images/2026_07_26/2026_07_26_07.webp",
+      "thumb_path": "images/2026_07_26/2026_07_26_07_thumb.webp",
+      "prompt": "{'theme': '\u98ef\u5e97\u623f\u9593\u6175\u61f6\u65e9\u6668 (Cozy Hotel Morning)', 'light': 'Moonlight glow (\u6708\u5149\u5fae\u5149)', 'angle': 'Eye-level shot (\u5e73\u8996)', 'expressions': 'Innocent look (\u7121\u8f9c\u773c\u795e)', 'outfits': '\u65d7\u888d\u6539\u826f\u6b3e (Modern Cheongsam)', 'locations': '\u96fb\u8a71\u4ead\u5167 (Inside telephone booth)', 'moods': 'Minimalist clean aesthetic (\u6975\u7c21\u6e05\u723d\u611f)', 'color_grades': 'Monochrome red (\u55ae\u8272\u7d05\u8abf)'}",
+      "width": 800,
+      "height": 1000,
+      "style": "portrait",
+      "timestamp": "2026-07-26T14:20:53.365015Z"
     }
   ]
 }
